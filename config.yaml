@@ -1,0 +1,36 @@
+# Screenshot Organizer Configuration
+
+# Global hotkey to trigger screenshot capture
+# Format: modifier+modifier+key (e.g., ctrl+shift+s)
+hotkey: "ctrl+shift+s"
+
+# Root directory containing subdirectories where screenshots will be sorted
+# The AI will choose one of the subdirectories based on the screenshot content
+root_directory: "C:\\screanshots"
+
+# QwenServer URL (local proxy from QwenServer folder)
+# Default: http://localhost:3264
+qwen_server_url: "http://localhost:3264"
+
+# QwenServer API key (leave empty if Authorization.txt is empty)
+qwen_api_key: ""
+
+# AI model to use (must support vision/image input)
+# Recommended: Qwen3-VL-235B-A22B, qwen-vl-max, qwen3-vl-plus
+ai_model: "Qwen3-VL-235B-A22B"
+
+# Prompt template sent to the AI along with the screenshot and folder list
+# Use {folders} as a placeholder for the list of available folder names
+prompt_template: |
+  You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+  
+  Available category folders:
+  {folders}
+  
+  Instructions:
+  1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+  2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+  3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+  4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+  
+  CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.

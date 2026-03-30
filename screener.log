@@ -1,0 +1,1170 @@
+2026/03/29 19:43:37 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 19:43:37 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 19:43:37 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 19:43:37 [ScreenOrganizer] AI model: Qwen3.5-Plus
+2026/03/29 19:43:37 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 19:43:37 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 19:43:37 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 19:43:42 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 19:43:42 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 19:43:48 [ScreenOrganizer] Region selected: (0,0)-(2556,1309)
+2026/03/29 19:43:48 [ScreenOrganizer] Cropped screenshot: 2556x1309, 275148 bytes
+2026/03/29 19:43:48 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 19:43:52 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/92398ad6-a0ef-41aa-8e26-4d3f95793911_1774799028866-5f074c7c0c0842eb-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5r3M%2BPyn%2Bxwzoizdm7GpjENZeR62v3zoTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUWgcknsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmZOovp539vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiN3JMNOrxuU4agAEAjcU%2Fa3%2FjtcE2%2B2nFh8SH4Ml3hF2eYbd2YNp9eRqd5Bvr0LVfvVbuRWuoXTe9%2BshU6gGN%2FjqT8W1MeGtQZAsdrI34aaVmHjvnRpEp4z%2FNiw1CSiJ1QRG5ZGVMIghXaYlQvZlLwShj2mAvoUtQwGvueSoOIrfkTFvLCexf2zSr7SAA&x-oss-date=20260329T154350Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYBxYFr3QyJXtHwB1XikV58XC%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=08cff90140d2cd6ea9556b734626f66e95b6a6b782e68fa082019a9fc6e605a6
+2026/03/29 19:43:54 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 19:43:54 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 19:43:54 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 19:43:54 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"0da719f7-465f-464e-a8a9-f413c53d8acd","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774799034,"id":"cfb1b706-679a-4bd7-81b8-6ce401322180","model":"qwen-max-latest","object":"chat.completion","parentId":"cfb1b706-679a-4bd7-81b8-6ce401322180","usage":{"input_tokens":698,"output_tokens":1,"total_tokens":699}}
+2026/03/29 19:43:54 [ScreenOrganizer] ------------------------
+2026/03/29 19:43:54 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/29 19:43:54 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/29 19:43:54 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_19-43-54.png
+2026/03/29 19:47:24 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 19:47:26 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 19:47:26 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 19:47:26 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 19:47:26 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 19:47:26 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 19:47:26 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 19:47:26 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 19:47:35 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 19:47:35 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 19:47:39 [ScreenOrganizer] Region selected: (395,742)-(757,1091)
+2026/03/29 19:47:39 [ScreenOrganizer] Cropped screenshot: 362x349, 125761 bytes
+2026/03/29 19:47:39 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 19:47:42 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/9a07ae91-7a28-44dc-9576-eb16cbe23ebb_1774799259827-9cf577b29e4aae67-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rbKtDzgoUVxrCycX7Uhkcgac1ehKjemjz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVVsMwisEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkbioMFMcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37i7P9OSurxuU4agAEMppe%2B8GkydL3njgBtXjz4SYAkJOYnCXA%2BeOFCkBn4XpnXyeDxlvdJ%2FVFZAIOGMjby1dYHPzqCnCkD0Jz7h9m04AyBZQQZLoxc5Zz7iPl3HJXdzVauPC3xNjQ3m1Zizdn9sxutTAPz5B%2FsY4sAccTPelmjxTLWbNDimxyPf9IwVSAA&x-oss-date=20260329T154740Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYnajGoZ4qrYsXebGueBrkmux%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=73de6b5afc7c2f0cf84ebf5415639df8471de8f579af3c4d43b92364cf27c726
+2026/03/29 19:47:44 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 19:47:44 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 19:47:44 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 19:47:44 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"a7076791-ee88-44e8-b752-3435e2f0bf98","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774799264,"id":"dbb59151-c0c0-469c-ab52-9a9d950de96f","model":"qwen3-vl-plus","object":"chat.completion","parentId":"dbb59151-c0c0-469c-ab52-9a9d950de96f","usage":{"cached_tokens":0,"characters":0,"input_tokens":698,"input_tokens_details":{"text_tokens":698},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":700}}
+2026/03/29 19:47:44 [ScreenOrganizer] ------------------------
+2026/03/29 19:47:44 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/29 19:47:44 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/29 19:47:44 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_19-47-44.png
+2026/03/29 19:47:47 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 19:56:14 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 19:56:14 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 19:56:14 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 19:56:14 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 19:56:14 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 19:56:14 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 19:56:14 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 19:56:24 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 19:56:24 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 19:56:28 [ScreenOrganizer] Region selected: (398,746)-(756,1088)
+2026/03/29 19:56:28 [ScreenOrganizer] Cropped screenshot: 358x342, 124221 bytes
+2026/03/29 19:56:28 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 19:56:33 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/8430f750-bd92-46fd-b615-9fa4d3f40de5_1774799788514-898716ee805f9d37-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5qAG%2FvCoZNtgvOJdFXUknoyOP5oq7fEhDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUZ%2F%2BgisEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmYh%2F%2Fdp39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTi11i6ZurxuU4agAF3yYktzbngPf06x9%2BKTOSZSTSxvfVS%2F3bxDoBmCmwulhl0NJg6r5vL46tthPdb78bmJZqGKlTbswRuWYiykByCe40ikqiyNOFLQmpJ2733pPB%2FB25eLCJ1lp8FmA7FZPsHcRP7EoKcvAn1Ys7YRGmj0f8PhUY8vYOEL8ZbAnT9QyAA&x-oss-date=20260329T155629Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NY5PAvLLL51bvsevzg4qDDrof%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=40cc99ac792a224fd0e7fae2a31cfe8813318c72696bb8d91d8f5261719d1437
+2026/03/29 19:56:34 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 19:56:34 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 19:56:34 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 19:56:34 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"38ac8d45-cc5c-47d8-92fd-f1f28a58702d","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774799794,"id":"chatcmpl-1774799794075","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 19:56:34 [ScreenOrganizer] ------------------------
+2026/03/29 19:56:34 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 19:56:34 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 19:56:34 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_19-56-34.png
+2026/03/29 19:59:46 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 19:59:48 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 19:59:48 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 19:59:48 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 19:59:48 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 19:59:48 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 19:59:48 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 19:59:48 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 19:59:52 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 19:59:52 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 19:59:56 [ScreenOrganizer] Region selected: (0,0)-(2559,1411)
+2026/03/29 19:59:56 [ScreenOrganizer] Cropped screenshot: 2559x1411, 486259 bytes
+2026/03/29 19:59:56 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:00:13 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/3e2b24e6-aed9-4593-9a77-6224efc97bb4_1774799996191-ecf07267577f14c8-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nzD43CpeZv74q5YU7zojcZZvtt3qSfujz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksV5xJcbsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FgbhJfsAcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iA9oSqOrxuU4agAGf6KHUCffYELxwBaJxr63%2FRmjOGkDbaAyqjYGCxrVAPyMAUJVYF4S3X8Bz4J5C%2FEyruMM5AeGTEQ06YgpbdL0K3oAw7f%2BeCgg%2FEEMmrTO5F0HuSEvRGvedLXRil52dgLxOzBTyLelgzVOzudl7NCNLEo9xGgBujwvCV4cu0NTnVSAA&x-oss-date=20260329T155956Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZFD7vH9NXHRchBF7LjtA1a4X%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=ced0f83213357c101c87b60634b70ebbb5a82bd1be0310de9a118ef1c765555d
+2026/03/29 20:00:14 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:00:14 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:00:14 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:00:14 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"4fb596fd-412e-47a2-bd04-c331c06cbb50","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774800014,"id":"chatcmpl-1774800014762","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:00:14 [ScreenOrganizer] ------------------------
+2026/03/29 20:00:14 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:00:14 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:00:14 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-00-14.png
+2026/03/29 20:08:18 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:09:12 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:09:12 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:09:12 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:09:12 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:09:12 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:09:12 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:09:12 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:09:13 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:09:14 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:09:17 [ScreenOrganizer] Region selected: (0,0)-(2551,1381)
+2026/03/29 20:09:17 [ScreenOrganizer] Cropped screenshot: 2551x1381, 483245 bytes
+2026/03/29 20:09:17 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:09:23 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/66dc87ba-e8ff-4b85-ad67-4e45d6dc1c09_1774800557441-f58742e4c8f255fc-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5niD%2F%2BFpugW%2FLuJcHbXkWVhXPxfiqKcpjz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVIjMMmsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FrYOqfBZ39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiKj8NMOrxuU4agAEAqc0BA3HpsHD8bjrp2jVmTAA9RT4yKskeOXtuS%2FsPuzc3r%2FpyPbdLAUdmjwS6fkZYxoBMEI2zeTIrmKEPuC81dzrjq3Y8AdG7T%2F6sKSPygpPLCx5YwXfoijBaOiwxUOK9yTActvCnvCnin7xxJ%2BOtQm7p6EQy8V5QL6b6w8rd7SAA&x-oss-date=20260329T160918Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZWDE1K77KybrPfue4Psseg7D%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=54e210f3914f1ab9108d808922c67668c6e6aced2571787e6f11cf8348f5b379
+2026/03/29 20:09:24 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:09:24 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:09:24 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:09:24 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"8c8411e3-a90f-4d3a-96d9-cae5e47b6d6f","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774800564,"id":"chatcmpl-1774800564716","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:09:24 [ScreenOrganizer] ------------------------
+2026/03/29 20:09:24 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:09:24 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:09:24 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-09-24.png
+2026/03/29 20:18:14 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:18:26 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:18:26 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:18:26 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:18:26 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:18:26 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:18:26 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:18:26 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:18:29 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:18:29 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:18:31 [ScreenOrganizer] Region selected: (0,0)-(2397,1060)
+2026/03/29 20:18:31 [ScreenOrganizer] Cropped screenshot: 2397x1060, 403182 bytes
+2026/03/29 20:18:31 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:18:35 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/cb63a9a5-3cc2-4fde-af95-da210727adda_1774801111596-51f85568be69bbcd-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nbc935hZJKxPqzexXzhUYsSetet7%2Fmljz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUepZYbsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmZvNdsAcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iZK1OPerxuU4agAGoE3xnOdg7PZq4CwdqxvnqUG%2BBHtL%2BNhRdySbymYnBhTbRJsjIf5oedQHOTpkLHBRKl5eizq8e7tmh7ZM%2BipEIKHMuRxbmGRUm%2FtdIXJurub3shBh4rhYRz0m%2Ba3i216gv0%2FuIKEJ7Z85HRC6NLkfnt7yrSdcKLFXnTp4PR%2Fj47iAA&x-oss-date=20260329T161832Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZn8gMhMks8Xy3BaFyEdrXzMt%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=10132ad4f0af6c9dfb910ea7702b4ba3e9cda8ac9ecdcfca2d87e36a25ab5113
+2026/03/29 20:18:36 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:18:36 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:18:36 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:18:37 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"7e0a63d0-d0d7-436a-aab6-d051ce40c289","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774801116,"id":"02805801-da3b-408b-b394-357c7b0eee54","model":"qwen3-vl-plus","object":"chat.completion","parentId":"02805801-da3b-408b-b394-357c7b0eee54","usage":{"cached_tokens":0,"characters":0,"input_tokens":698,"input_tokens_details":{"text_tokens":698},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":700}}
+2026/03/29 20:18:37 [ScreenOrganizer] ------------------------
+2026/03/29 20:18:37 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/29 20:18:37 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/29 20:18:37 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-18-37.png
+2026/03/29 20:22:10 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:22:12 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:22:12 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:22:12 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:22:12 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:22:12 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:22:12 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:22:12 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:22:17 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:22:17 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:22:19 [ScreenOrganizer] Region selected: (10,0)-(2139,1346)
+2026/03/29 20:22:20 [ScreenOrganizer] Cropped screenshot: 2129x1346, 378167 bytes
+2026/03/29 20:22:20 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:22:23 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/cd61840a-67b9-4896-98e1-5c05a6bb04ae_1774801340098-98564166999e8246-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vvGvHfiIptxq2IekCIk3QkeLlmlbHPljz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVr8O8msEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoalIP4gcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iagSMnurxuU4agAGpXXBMNn9TMrCI2ChlUEQNCLc9ucHcmrvibtqN%2BpNEpqThvnce6q6T93z0jNuffr5tuFXMD2DdK9vAno3M%2Fc4xozvcAQbrsAUK5%2BA%2FAg5Y5nU37x7B4oFJq2P0PE7%2BoE%2B5UvzfNVBjG01eNaZ8NMW5EncENQapMpdUoB9Lqzc2eSAA&x-oss-date=20260329T162220Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXZQKkeULqocxf9wtqt6Jztdt%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=767f8381890b591b0021291136f570e94f7bafca66af817683e5ff9cc79cd358
+2026/03/29 20:22:25 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:22:25 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:22:25 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:22:25 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"338fc557-f4c3-4bb5-89b4-64fb1283dc37","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774801345,"id":"79ba2d7a-e748-45b2-bb6f-32a076199d80","model":"qwen3-vl-plus","object":"chat.completion","parentId":"79ba2d7a-e748-45b2-bb6f-32a076199d80","usage":{}}
+2026/03/29 20:22:25 [ScreenOrganizer] ------------------------
+2026/03/29 20:22:25 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:22:25 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:22:25 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-22-25.png
+2026/03/29 20:28:14 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:28:16 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:28:16 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:28:16 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:28:16 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:28:16 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:28:16 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:28:16 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:28:17 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:28:17 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:28:19 [ScreenOrganizer] Region selected: (93,59)-(1915,1105)
+2026/03/29 20:28:19 [ScreenOrganizer] Cropped screenshot: 1822x1046, 248643 bytes
+2026/03/29 20:28:19 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:28:22 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/be59043a-07a2-4aa3-87d4-48d4bfbedcfa_1774801699158-d164a19e4be14458-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vMGtjymaxZ4be5d1bC3VJnTsNUpY3ItDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVv%2BKEgsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoYno%2Bx8cX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37i5ecEderxuU4agAFHlIguAXpIGYbzQfLJfx%2BOXDph3d4SPdzBQyyZzE5X%2B%2FDPuTn9KrYt9H9gxiB5jJDhqggCMP5SXY3BTDEARCWmqdmWr%2FIcKgin7G5%2BBOzuj%2BvgSJGPJSvMud6UBsnNUrZ78fV1UQ2lt%2F2DFgYgAQQR2OY1Bqg2i%2FGHSvQgZxao1CAA&x-oss-date=20260329T162819Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXyQbFtsxVuRups9R2BLxJHcV%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=9c48f807b9e288fb7d6b7add85de73fba2c8fc87fd6c1d8ad0725ac1f77dbf63
+2026/03/29 20:28:22 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:28:22 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:28:22 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:28:22 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"5d1ff16d-5d04-4082-8045-e558575af6e0","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774801702,"id":"chatcmpl-1774801702959","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:28:22 [ScreenOrganizer] ------------------------
+2026/03/29 20:28:22 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:28:22 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:28:22 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-28-22.png
+2026/03/29 20:39:52 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:39:54 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:39:54 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:39:54 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:39:54 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:39:54 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:39:54 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:39:54 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:39:57 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:39:57 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:39:58 [ScreenOrganizer] Region selected: (204,346)-(1672,1267)
+2026/03/29 20:39:58 [ScreenOrganizer] Cropped screenshot: 1468x921, 185666 bytes
+2026/03/29 20:39:58 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:40:01 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/efca1d2c-d776-4a8c-a63b-227a3e5d4831_1774802398360-ba32df12703285ca-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vNCN3iuosU%2B4WgcRD5i1IFaPpem7P8gDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVe1NYgsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkYvpNt8cX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iaj9qhurxuU4agAFdAjlSth1bpeTyYWZufS49jYpa2GTxOkR5QN8HxEasuKlr16ENtStsL3vuINwusI88spqpHr5wIwWZyMbhh2cw3txopY8L8YKDN28F6AFqyMIqn4mCBX2Lyyoe3KcfDle%2B1cvk0%2F%2FhI229w4%2BAc%2FNBg4pRdlG%2B7jHysd9%2F4bSvnCAA&x-oss-date=20260329T163959Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXxCgVWT5LGKs6HoRPdurtvWb%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=fbe4bd4136f1eb6cab1d79646fa815fdb2a04aeca8e00a5bc551b4a04eca7454
+2026/03/29 20:40:02 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:40:02 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:40:02 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:40:02 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"e16f110b-8b52-45a5-9dcf-8c68a7f31959","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774802402,"id":"chatcmpl-1774802402316","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:40:02 [ScreenOrganizer] ------------------------
+2026/03/29 20:40:02 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:40:02 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:40:02 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-40-02.png
+2026/03/29 20:40:13 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:46:33 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:46:33 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:46:33 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:46:33 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:46:33 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:46:33 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:46:33 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:46:34 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:46:34 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:46:35 [ScreenOrganizer] Region selected: (238,96)-(1610,851)
+2026/03/29 20:46:35 [ScreenOrganizer] Cropped screenshot: 1372x755, 165396 bytes
+2026/03/29 20:46:35 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:46:43 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/e3218611-e6ba-4883-9716-98ddb3135642_1774802795770-561b819d058d8db8-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rtPPzgtIwSg6%2FaR3zch3BnSbxYp%2Fbauzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVmppcbsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoZuLfsAcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iOgxDnerxuU4agAFmSwzFWlDP7oEfm8rJLRNQ3hB8gt1yPfJQLl88Yk6CSo90ysfbmBI97pnc6qiST9Hw7clCh4neGokRpR3UAbakg4DmmjB%2BrU5%2FmL%2BF1TXRdrAx0VKRf6kQUKTz80AenUml6GKOpLwrEJoGEgopXFKN1gv3V%2Bfzl148p8pL73HDfiAA&x-oss-date=20260329T164636Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYXwFTYS34m1EZmcp2E3tH3qY%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=e92c119fb82aae8b05a82395a1e730f5b9238be7d1900117620320084f651277
+2026/03/29 20:46:44 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:46:44 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:46:44 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:46:44 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"7403e46a-c985-4fc0-a640-e21e1bc7cb72","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774802804,"id":"chatcmpl-1774802804735","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:46:44 [ScreenOrganizer] ------------------------
+2026/03/29 20:46:44 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:46:44 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:46:44 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-46-44.png
+2026/03/29 20:51:36 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:51:38 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:51:38 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:51:38 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:51:38 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:51:38 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:51:38 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:51:38 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:51:38 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:51:39 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:51:40 [ScreenOrganizer] Region selected: (298,235)-(2038,1362)
+2026/03/29 20:51:40 [ScreenOrganizer] Cropped screenshot: 1740x1127, 247938 bytes
+2026/03/29 20:51:40 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:51:45 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/e250cb15-f27d-4450-aac9-43ab064990b3_1774803100210-c69e67a276e6a3b3-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5qBIt%2FX3LdJ3JihOhDUkldsXNYYrrzCrjz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVR9PYksEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkagJNoAcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37i04FTQOrxuU4agAFEBEp15LdFqjoalzip7wYzp6ZaZ%2F6%2FYHgBy3vhqu3RaGVrtpy3l%2Bkq%2BRIx1KVvQIpP55XyrxI%2B9xXTLg4Ik1XxMZ5YvHDeUb%2F%2F9Qza9TPOg7fLjwrEwx1rg9c08VnMUXy9kZYd1rkAWLXV%2Bw7vmhdc%2FvvfDOdFT3vaA%2ByEIbYvJCAA&x-oss-date=20260329T165142Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NY4iec1hhkZJ86evW9PY4AyiL%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=80d38036fb7f849299dc28c4063d54ba9e5ecce581aa3a3a51187564f585cc96
+2026/03/29 20:51:46 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:51:46 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:51:46 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:51:46 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"ca15ec7d-3f5d-48ab-a183-bb030270d05a","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774803106,"id":"chatcmpl-1774803106207","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:51:46 [ScreenOrganizer] ------------------------
+2026/03/29 20:51:46 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:51:46 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:51:46 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-51-46.png
+2026/03/29 20:52:46 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 20:52:47 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 20:52:47 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 20:52:47 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 20:52:47 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 20:52:47 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 20:52:47 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 20:52:47 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 20:52:49 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 20:52:49 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 20:52:50 [ScreenOrganizer] Region selected: (571,588)-(1923,1439)
+2026/03/29 20:52:50 [ScreenOrganizer] Cropped screenshot: 1352x851, 138539 bytes
+2026/03/29 20:52:50 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 20:52:56 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/6a3eb3a2-ccb3-4c24-a882-ca0e759381c0_1774803170405-0f1afc5f9b67eb52-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5mCcvjTgutx4PePWk%2Ff3DEsSOxqtq7cijz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUb8ZomsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmalMNNccX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37ir3%2By9%2BrxuU4agAEfgzwYg%2F57e7%2BY1lFisfj0rXO2c2CiAegmc09gsdRU5ShjNfTEDeW8quUwCgGoDhI5r%2B1SFr0zyBbMyMnKhWLr0QlgLiWcnMCcMoI1juudHTy8YX%2FiHIwBS8vUXH6BeXWjxyjjdaT4b3rfQRNBreGPnrxCKpwxsogIt12FXtg0SiAA&x-oss-date=20260329T165251Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZ79Bgo4PW5dXin81yDcFYkwh%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=75c013b6f1cdd79dce03ee979f409776bcf0a997bbe49da8152abc5620946156
+2026/03/29 20:52:57 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 20:52:57 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 20:52:57 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 20:52:57 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"529c1d01-a7d9-4c7c-9b37-fa2871c847de","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774803177,"id":"chatcmpl-1774803177270","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 20:52:57 [ScreenOrganizer] ------------------------
+2026/03/29 20:52:57 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 20:52:57 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 20:52:57 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_20-52-57.png
+2026/03/29 21:57:20 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 21:57:22 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 21:57:22 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 21:57:22 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 21:57:22 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 21:57:22 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 21:57:22 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 21:57:22 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 21:57:24 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 21:57:24 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 21:57:25 [ScreenOrganizer] Region selected: (218,204)-(1569,1067)
+2026/03/29 21:57:25 [ScreenOrganizer] Cropped screenshot: 1351x863, 185305 bytes
+2026/03/29 21:57:25 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 21:57:32 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/850de9a4-3a3a-4d8b-845a-9c50d7b8f0ec_1774807045892-825dfb464967a0c7-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nULIvA35tb5ampSGHlnGgsO%2B4brabq0Dz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVpguobsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoZBjmdcCAn3AZMctRoyYFM1NglTmhzo1g8fwuTEg9gL62J%2BIYkDi95Okml8Ccvdq%2FkKJC0DloHibv22y%2BrxuU4agAFRnS%2BdtCZphLTmjcDUgTaor4jSwhWEYwW2jAWd2MYyrN064rzAjpcQ3oPi63ETCK%2Fx6%2Bh1tmNm5dudPCP8dpxwK0r3lse%2F57QPhrD3K5C0owLDPqXyQT95L65xG1Du%2Fmgg%2FWaXA8Qeqm3Jv7U2kepDnWALpJW4zlc65TYC3cJ6%2ByAA&x-oss-date=20260329T175727Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZag1t2DzRkBJGTxhy7a7BcA2%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=079f88bee1bcc0fc04b04f82c3a9afe6a1727bfcf1f967c5bb7fef3f82341ab7
+2026/03/29 21:57:33 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 21:57:33 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 21:57:33 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 21:57:33 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"f29caf52-e8df-44e6-abf3-edadd0fa77ed","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774807053,"id":"chatcmpl-1774807053434","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 21:57:33 [ScreenOrganizer] ------------------------
+2026/03/29 21:57:33 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 21:57:33 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 21:57:33 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_21-57-33.png
+2026/03/29 21:59:22 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 21:59:24 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 21:59:24 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 21:59:24 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 21:59:24 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 21:59:24 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 21:59:24 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 21:59:24 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 21:59:26 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 21:59:26 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 21:59:27 [ScreenOrganizer] Region selected: (576,324)-(1701,1142)
+2026/03/29 21:59:27 [ScreenOrganizer] Cropped screenshot: 1125x818, 110670 bytes
+2026/03/29 21:59:27 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 21:59:30 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/54795263-b35c-4041-820e-01dfadc6f209_1774807167603-0606dee4612ab2a9-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rfGYjQ2o5kw4ytZnXgqXoSR%2FcUn%2FfvtTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUmsdMbsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FqbusPcAcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iijPfIerxuU4agAGPs%2FMrOiHI8WAriPDC8pYZsevi9dTrM1L8B80YMz%2BvSW9hSwyFDE3vnBTp6euLtVa%2FvCJpQptQHDkjCptUAikOyOxKwQkK21V5BjIX9r4bWwYAfhpqaDtmiRV8RqG8gOxKxfTOK3v%2BfM6qRSFoWNe1DmVWHGpAyHLluUJav%2BqYBCAA&x-oss-date=20260329T175928Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYjR2d7QEtNFdSQMzGKx8p2DW%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=98e9374f322f73ab35349ebc404ab76d98ca569f9c76487364bba50948ff3ec3
+2026/03/29 21:59:31 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 21:59:31 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 21:59:31 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 21:59:31 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"006ba242-a809-41f2-b8f3-9d5e21fd18c2","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774807171,"id":"chatcmpl-1774807171428","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 21:59:31 [ScreenOrganizer] ------------------------
+2026/03/29 21:59:31 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 21:59:31 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 21:59:31 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_21-59-31.png
+2026/03/29 23:01:19 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 23:01:22 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 23:01:22 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 23:01:22 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 23:01:22 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 23:01:22 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 23:01:22 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 23:01:22 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 23:01:23 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 23:01:23 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 23:01:24 [ScreenOrganizer] Region selected: (421,398)-(1985,1272)
+2026/03/29 23:01:24 [ScreenOrganizer] Cropped screenshot: 1564x874, 161101 bytes
+2026/03/29 23:01:24 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 23:01:29 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/5e2dd3de-6ecf-4423-80b1-3a16f1d2a48d_1774810885004-b9851174ec0f0d79-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5ndM4%2FMjOsS9PqsR0PjqkINWP1JuYfSmDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksU3284bsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2Fibmu98AcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iOPh3EurxuU4agAEyRFZ8cbhIGVsfs6xu4ktfwZ0F8RFpx1QZolhWaF3FBeATEalA5QqHPeTuuTWGX6TUuxaP2UNTF%2B5lvfOL%2FDlRoLF0DyYEWqgVVsoE9YNKKrQZXBzGPYJZy5L76dTdgd7341pJ59pNkS8rGtaWUEsvCH126gEy8IqNsb70XXO%2FnyAA&x-oss-date=20260329T190125Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZhx5xa43C8GEeRNBXTreVByz%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=593f9b3776640e500b31f526c2b85408a0e961adaf2b815ffcf2b75440392012
+2026/03/29 23:01:30 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 23:01:30 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 23:01:30 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 23:01:30 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"49a31cbe-b59f-45c6-a858-94261e4de6f3","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774810890,"id":"chatcmpl-1774810890617","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 23:01:30 [ScreenOrganizer] ------------------------
+2026/03/29 23:01:30 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 23:01:30 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 23:01:30 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_23-01-30.png
+2026/03/29 23:01:38 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 23:02:30 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 23:02:30 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 23:02:30 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 23:02:30 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 23:02:30 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 23:02:30 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 23:02:30 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 23:02:32 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 23:02:33 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 23:02:35 [ScreenOrganizer] Region selected: (236,158)-(1845,1203)
+2026/03/29 23:02:35 [ScreenOrganizer] Cropped screenshot: 1609x1045, 227898 bytes
+2026/03/29 23:02:35 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 23:02:41 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/7ced5bba-a317-4b5e-8f28-c59be09bb5fe_1774810955545-1ca31b59d2034145-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rdPoj8mJRMj%2FXZSGThnWQWa8NPiPLcpTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVohoYksEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoZJ7O5H39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTipTu7jerxuU4agAEDPIjuyVqZQ8htcIp6FDVgX4KKk%2FrW06F0atZh3%2BcB5Oqzs1BUjuXkHTb7IpM8AF38DWuFstU1ZQl75CQq5%2BEjap1Zdnhot5TavNsA8RvB1dt64CW3h9s4LgMrKtbFvWFiRLt04JifAlSmr1mIa%2F1uVh04Io%2BKhJp%2F%2FHfJ%2BXILjiAA&x-oss-date=20260329T190236Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYhu2HuKm872JBPydCgLcg7wG%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=098f8e4254563fed562939e7739a23322a2714938a1e00021e0d4ac2e931e2a1
+2026/03/29 23:02:42 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 23:02:42 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 23:02:42 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 23:02:42 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"e8142343-be44-4501-8507-b0019f8851d7","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774810962,"id":"chatcmpl-1774810962600","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 23:02:42 [ScreenOrganizer] ------------------------
+2026/03/29 23:02:42 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 23:02:42 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 23:02:42 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_23-02-42.png
+2026/03/29 23:02:51 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 23:06:08 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 23:06:08 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 23:06:08 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 23:06:08 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 23:06:08 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 23:06:08 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 23:06:08 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 23:06:13 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 23:06:13 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 23:06:32 [ScreenOrganizer] Region selected: (312,244)-(2127,1142)
+2026/03/29 23:06:32 [ScreenOrganizer] Cropped screenshot: 1815x898, 306152 bytes
+2026/03/29 23:06:32 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 23:06:37 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/d760bc75-0323-4823-ae62-e7af9255a79a_1774811192474-3df27300a710dd3b-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nkeunti6ZWxPGKRFT1onhgXcNpiq7Rrzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUS5PEksEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmYsJe4AcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iCd%2BnMurxuU4agAE6NEYrP5tSb7N4r0iRsx8Fgp7Tpm%2F9txsJnH8WHxAQjQDusuGKv2OrgXszVU6Qdfv2B3X6Ig5ahw2Bl3QaDA%2FczF9iwCqdRpPq7TJ8qf50YOF5ZT4gVubwMhfX3bYLKtfUNMwzTi%2B8C5NoHjH8sIBCO5%2BGhOb16EiCIBx7usHllyAA&x-oss-date=20260329T190633Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZQ1SYfyws3aFrDFx5QLEekzM%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=ddb638f1c058875a3977caaa3d40b59c53727a2e798abefc90b6a25364d29a2d
+2026/03/29 23:06:38 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 23:06:38 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 23:06:38 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 23:06:38 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"45ac09af-5226-49d5-bb50-16a1ce242e28","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774811198,"id":"chatcmpl-1774811198251","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 23:06:38 [ScreenOrganizer] ------------------------
+2026/03/29 23:06:38 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 23:06:38 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 23:06:38 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_23-06-38.png
+2026/03/29 23:06:48 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/29 23:08:11 [ScreenOrganizer] Configuration loaded successfully
+2026/03/29 23:08:11 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/29 23:08:11 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/29 23:08:11 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/29 23:08:11 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/29 23:08:11 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/29 23:08:11 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/29 23:08:18 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/29 23:08:18 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/29 23:08:20 [ScreenOrganizer] Region selected: (475,352)-(1822,1400)
+2026/03/29 23:08:20 [ScreenOrganizer] Cropped screenshot: 1347x1048, 159906 bytes
+2026/03/29 23:08:20 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/29 23:08:25 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/377a0e88-2006-4d19-86dc-9c2a9eee55b0_1774811300685-8329812bd325da03-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5n0fPnGne1v7ZebNRDLom8hQdpNm7TDpzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVQ%2BIgesEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkYoI8lQcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iL%2BlTg%2BrxuU4agAGkOAMYgxXep4BGe8vMrk9aONHjBI5hLsG4YejqcsNY7UTEphW%2F9wZyHR9Qp6fDY%2BTtmADEND0SM3VxaJj8kaAu0FLJ2Pd75WexuHPRzEUwXb9UM8jIpMlu6Q7quZ62eU1E0i4bkhz4Itb%2F9nyHa30I7yGyLVml00JPbx9AkINFjSAA&x-oss-date=20260329T190821Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZA7Crp2NZUp76zFotMUatqhE%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=5aac7c748f82cb1f5d70ea7280f812e75064aa9a3259f13ee9d1296f89cf1e7c
+2026/03/29 23:08:26 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/29 23:08:26 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/29 23:08:26 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/29 23:08:26 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"b814a03e-9f95-4ac0-a8e4-c15ba422e674","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774811306,"id":"chatcmpl-1774811306363","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/29 23:08:26 [ScreenOrganizer] ------------------------
+2026/03/29 23:08:26 [ScreenOrganizer] AI parsed answer: ''
+2026/03/29 23:08:26 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/29 23:08:26 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-29_23-08-26.png
+2026/03/29 23:08:34 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 00:06:55 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 00:06:55 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 00:06:55 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 00:06:55 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 00:06:55 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 00:06:55 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 00:06:55 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 00:06:58 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 00:06:58 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 00:07:00 [ScreenOrganizer] Region selected: (141,284)-(2244,1372)
+2026/03/30 00:07:00 [ScreenOrganizer] Cropped screenshot: 2103x1088, 367813 bytes
+2026/03/30 00:07:00 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 00:07:08 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/062f1db9-1991-4784-b3d6-def6361e795f_1774814820979-35620aa073a02f9b-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nSIezVr4sT36CBRXHXkjEHRuF9u4TGrDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVAq9AbsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FjZup%2FV339vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTifb2z2erxuU4agAFeuFkyWJfUnC9nz8rTqHFBRbCNVr%2FO%2FKhlpMhPi1kt84MxWGUu8hcKyk3FGn4G3RPoIbqNfmNd9HSYnuHWAdKRvN7pIf2hE6JociKCj3GQpjjhEp8yHZ7GUYc4%2Frdfp6l%2FNP3CrUkvyq%2FF57VauQQa98LfGDGjjWZ1l2HIeqKG%2ByAA&x-oss-date=20260329T200701Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZgjVaBT2hbjGWfv1RJnQTAmN%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=4d58b9bad0c2613f6b90732f3fd8b18050a7e49b62511b8d33842943aa3bf86e
+2026/03/30 00:07:09 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 00:07:09 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 00:07:09 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 00:07:09 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"b159b3a8-921f-49b5-9e76-667e9d4809c3","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774814829,"id":"chatcmpl-1774814829658","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/30 00:07:09 [ScreenOrganizer] ------------------------
+2026/03/30 00:07:09 [ScreenOrganizer] AI parsed answer: ''
+2026/03/30 00:07:09 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/30 00:07:09 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_00-07-09.png
+2026/03/30 00:07:20 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 00:08:21 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 00:08:21 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 00:08:21 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 00:08:21 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 00:08:21 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 00:08:21 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 00:08:21 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 00:08:23 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 00:08:23 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 00:08:24 [ScreenOrganizer] Region selected: (233,295)-(1722,1022)
+2026/03/30 00:08:24 [ScreenOrganizer] Cropped screenshot: 1489x727, 165945 bytes
+2026/03/30 00:08:24 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 00:08:28 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/6f63990e-2ec5-4b52-8177-803ba0405ca9_1774814904852-0f4d7f83970d6ce3-screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5r7Eu%2FCvrVA5KCOVG7ljTYGSfpDo5fopTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUFqfoasEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FuZiMtIwcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iQ78OMerxuU4agAFmcQEoFdr0%2BTB6wYFM7e9BdJ2ja32xFRMJQlFwjv0RGZ4FlPySX5dIGkIYidsInOvEZVaFknwgXkBgGLSy%2FeY3tlvbz%2FBBkoXx3kp7RZ4VJb22sKUevUQeF2X8LZGHVLglG%2FNg%2FE9DyHCxFvoIF%2F4JtxvcNW2yDD%2B7ENg7unPgDiAA&x-oss-date=20260329T200825Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYNYUvSjaSbeVHTi6SEuoLRCG%2F20260329%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=23dc5a63b6eab439ddd51126ec0c1547c415d8d1231d2cd59c10c090983542a2
+2026/03/30 00:08:29 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 00:08:29 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 00:08:29 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 00:08:29 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"1531577d-5b5d-4c9b-890e-4e88f7358ab0","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774814909,"id":"chatcmpl-1774814909439","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/30 00:08:29 [ScreenOrganizer] ------------------------
+2026/03/30 00:08:29 [ScreenOrganizer] AI parsed answer: ''
+2026/03/30 00:08:29 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/30 00:08:29 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_00-08-29.png
+2026/03/30 03:06:56 [ScreenOrganizer] Received signal terminated. Shutting down...
+2026/03/30 04:09:15 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 04:09:15 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 04:09:15 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 04:09:15 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 04:09:15 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 04:09:15 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 04:09:15 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 04:09:21 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 04:09:21 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 04:09:23 [ScreenOrganizer] Region selected: (319,255)-(2423,1195)
+2026/03/30 04:09:23 [ScreenOrganizer] Cropped screenshot: 2104x940, 228729 bytes
+2026/03/30 04:09:23 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 04:09:24 [ScreenOrganizer] ERROR: Failed to upload screenshot to QwenServer: upload HTTP 500: {"error":"Ошибка при загрузке файла: qwen http 500: Internal server error."}
+2026/03/30 04:09:42 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 04:09:42 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 04:09:43 [ScreenOrganizer] Region selected: (489,327)-(2029,1137)
+2026/03/30 04:09:43 [ScreenOrganizer] Cropped screenshot: 1540x810, 99207 bytes
+2026/03/30 04:09:43 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 04:09:44 [ScreenOrganizer] ERROR: Failed to upload screenshot to QwenServer: upload HTTP 500: {"error":"Ошибка при загрузке файла: qwen http 500: Internal server error."}
+2026/03/30 04:09:59 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 04:10:00 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 04:10:00 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 04:10:00 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 04:10:00 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 04:10:00 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 04:10:01 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 04:10:01 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 04:10:03 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 04:10:03 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 04:10:04 [ScreenOrganizer] Region selected: (461,389)-(1904,1272)
+2026/03/30 04:10:04 [ScreenOrganizer] Cropped screenshot: 1443x883, 147455 bytes
+2026/03/30 04:10:04 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 04:10:05 [ScreenOrganizer] ERROR: Failed to upload screenshot to QwenServer: upload HTTP 500: {"error":"Ошибка при загрузке файла: qwen http 500: Internal server error."}
+2026/03/30 04:11:43 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 04:41:37 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 04:41:37 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 04:41:37 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 04:41:37 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 04:41:37 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 04:41:37 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 04:41:37 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 04:41:40 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 04:41:40 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 04:41:42 [ScreenOrganizer] Region selected: (201,30)-(2010,1287)
+2026/03/30 04:41:42 [ScreenOrganizer] Cropped screenshot: 1809x1257, 134474 bytes
+2026/03/30 04:41:42 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 04:41:44 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/9946ee35-abdb-4d3a-8dd0-352b661d54c5_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rxIo7h35FK9bPcMX%2FgjjQCZNZ%2FrbbCqDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksV0%2FrIVsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FgYqr9YmcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iqfDfyerxuU4agAGRzeDWoGcJTlp0VDmReIfY6JmF88Gb4dDa%2FmGlXUxGIHZIGZ1zjzvImhL7RFkpdRQZib07Gr16UiJL90PmSZvGIOl0u%2BQyqunFTCOAAi%2FihEsslekebZLW0bqBVjvEIZHAMp2Qsfetuajyei9h3ybLEFaAXNxRKdKYSyqCEllE8CAA&x-oss-date=20260330T004143Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYDi4U2NkBq73YQj4WhYSBsiJ%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=6b5ffb93ee5863d7aa25be06192d8b25d01588edefbcccd7a658d53327ec1f0a
+2026/03/30 04:41:45 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 04:41:45 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 04:41:45 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 04:41:45 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"6a450b14-1dff-4c5e-8377-cddbcbb510fb","choices":[{"finish_reason":"stop","index":0,"message":{"content":"","role":"assistant"}}],"created":1774831305,"id":"chatcmpl-1774831305394","model":"qwen3-vl-plus","object":"chat.completion","parentId":null,"usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0}}
+2026/03/30 04:41:45 [ScreenOrganizer] ------------------------
+2026/03/30 04:41:45 [ScreenOrganizer] AI parsed answer: ''
+2026/03/30 04:41:45 [ScreenOrganizer] WARNING: AI returned unrecognized folder: ''. Using 'etc' as fallback.
+2026/03/30 04:41:45 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_04-41-45.png
+2026/03/30 05:15:42 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 05:15:43 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 05:15:43 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 05:15:43 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 05:15:43 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 05:15:43 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 05:15:43 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 05:15:43 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 05:15:45 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:15:45 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:15:46 [ScreenOrganizer] Region selected: (358,264)-(1702,1243)
+2026/03/30 05:15:46 [ScreenOrganizer] Cropped screenshot: 1344x979, 88040 bytes
+2026/03/30 05:15:46 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:15:49 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/175f58aa-27e2-4a0d-9c4b-a2b587971454_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vMPYLA2ol35%2FGJW2T3gE0Fbb5K1pbyizz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVny80WsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FobmuuFYcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iUWCFRurxuU4agAFKXeO7R89HWdd31L8tSdCd3t7FF7eRs49RknVJfanEG6de8B7doLa5r4k9AwhJMw9qH7lPOWZN701GoNDTkvOvieJgo2ZrFuYLW7PuJvL0ObXnPxyznnZDnCGvimIU5ZWhmOHHTRHOu7xvNtiUFGqKFAldZwlExdZn%2BIGhA2ywCSAA&x-oss-date=20260330T011547Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXyv8t7VVP3bYBFdMPa1f9SYi%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=3d2460f84debd4a953fcae23e2552dde42938067dc07c835062c84db60d429af
+2026/03/30 05:15:51 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:15:51 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:15:51 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:15:51 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"69d82bbc-8bb4-494a-8020-e9e6e89fcc3a","choices":[{"finish_reason":"stop","index":0,"message":{"content":"code","role":"assistant"}}],"created":1774833351,"id":"a324a11a-5adb-431d-b96d-76d5402661be","model":"qwen3-vl-plus","object":"chat.completion","parentId":"a324a11a-5adb-431d-b96d-76d5402661be","usage":{"cached_tokens":0,"characters":0,"image_tokens":1304,"input_tokens":1548,"input_tokens_details":{"image_tokens":1304,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":1550}}
+2026/03/30 05:15:51 [ScreenOrganizer] ------------------------
+2026/03/30 05:15:51 [ScreenOrganizer] AI parsed answer: 'code'
+2026/03/30 05:15:51 [ScreenOrganizer] AI chose folder: 'code'
+2026/03/30 05:15:51 [ScreenOrganizer] Screenshot saved to: C:\screanshots\code\2026-03-30_05-15-51.png
+2026/03/30 05:16:28 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:16:28 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:16:32 [ScreenOrganizer] Region selected: (2952,158)-(3318,510)
+2026/03/30 05:16:32 [ScreenOrganizer] Cropped screenshot: 366x352, 125917 bytes
+2026/03/30 05:16:32 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:16:33 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/99f6600b-be8a-4646-b8ef-3f48fb87aa46_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rWHoLtgKVZ%2FfSENXSHpXgQdsNrjqDzkTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUfvdAWsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FmZnt89YcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37ifFJeTerxuU4agAGeG87wtM4SBhIXzroQH8uFtT6UPQwCFEdmctg6iegg0W1C%2BAHTRWRVsHmtCY0AiPWhKfNV%2BqZ5mMbzCk5K3riKM6OSQJfbWW65r9W5pD%2BVEYmYiO5nILyto%2F2Mp82PDGNtzUmHDya5c0sBoNUZukt%2FA5puqJU9%2BVpHA%2Bjo3QoCDSAA&x-oss-date=20260330T011633Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYcU8YmzxJ6o7R6AxEzLGaeXs%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=dff39ecd70eae53c065a3239105bf853d1fb094476a58cab660f94fab31b0ad3
+2026/03/30 05:16:36 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:16:36 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:16:36 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:16:36 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"d644e521-cd0e-4897-8ff2-50608c781e0f","choices":[{"finish_reason":"stop","index":0,"message":{"content":"anime","role":"assistant"}}],"created":1774833396,"id":"34698ab5-ceb1-4172-b8ca-59a30ef46ff1","model":"qwen3-vl-plus","object":"chat.completion","parentId":"34698ab5-ceb1-4172-b8ca-59a30ef46ff1","usage":{"cached_tokens":0,"characters":0,"image_tokens":123,"input_tokens":367,"input_tokens_details":{"image_tokens":123,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":369}}
+2026/03/30 05:16:36 [ScreenOrganizer] ------------------------
+2026/03/30 05:16:36 [ScreenOrganizer] AI parsed answer: 'anime'
+2026/03/30 05:16:36 [ScreenOrganizer] AI chose folder: 'anime'
+2026/03/30 05:16:36 [ScreenOrganizer] Screenshot saved to: C:\screanshots\anime\2026-03-30_05-16-36.png
+2026/03/30 05:18:49 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:18:49 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:18:53 [ScreenOrganizer] Region selected: (401,357)-(765,710)
+2026/03/30 05:18:53 [ScreenOrganizer] Cropped screenshot: 364x353, 125811 bytes
+2026/03/30 05:18:53 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:18:56 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/130e00a1-76ac-4f8f-8b50-6956c5ca67ea_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5ncedndhI553aqaZ2iEgE0%2FX%2FpggJznqTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksV558IVsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FgYhvdUmcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iA%2Byxg%2BrxuU4agAGqfNAavsmgdLCEXDnunfRfr8vJixm5Juj4%2BJNk88K2vcR1V4DeOxC7udlXvQ0sMlzR4lLNs4tBL6t6CuMa9gN3WTXNBUP%2BajHLbvxoBrpAHytR5N3H2cY6Gqa%2FAZh2ua2pMs03bcZwgRWAHBgrmmjocfQl9773Uc4ZOewaSfjheyAA&x-oss-date=20260330T011855Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZi2ciiQXjhqeN5dMjSuLoYLK%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=2e66858021e31ec53671b707c6279beeaf091acb4c1dd0e6eaa89ab3643311eb
+2026/03/30 05:18:59 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:18:59 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:18:59 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:18:59 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"6645393f-e5cc-4ea9-bab2-c7c9579a7f21","choices":[{"finish_reason":"stop","index":0,"message":{"content":"anime","role":"assistant"}}],"created":1774833539,"id":"4d8b2de8-e271-4a7a-a2ae-34da50ecc5ea","model":"qwen3-vl-plus","object":"chat.completion","parentId":"4d8b2de8-e271-4a7a-a2ae-34da50ecc5ea","usage":{"cached_tokens":0,"characters":0,"image_tokens":123,"input_tokens":367,"input_tokens_details":{"image_tokens":123,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":369}}
+2026/03/30 05:18:59 [ScreenOrganizer] ------------------------
+2026/03/30 05:18:59 [ScreenOrganizer] AI parsed answer: 'anime'
+2026/03/30 05:18:59 [ScreenOrganizer] AI chose folder: 'anime'
+2026/03/30 05:18:59 [ScreenOrganizer] Screenshot saved to: C:\screanshots\anime\2026-03-30_05-18-59.png
+2026/03/30 05:19:04 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:19:04 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:19:07 [ScreenOrganizer] Region selected: (8,7)-(2390,1365)
+2026/03/30 05:19:07 [ScreenOrganizer] Cropped screenshot: 2382x1358, 261419 bytes
+2026/03/30 05:19:07 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:19:08 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/e0046a8c-a687-4e54-a657-3013f78cfea1_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vXc%2B6DvItR%2FIiZbVX8s1Aza9h7rqjvmDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVCvpAXsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2Fjbs7fV739vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiRrvM1OrxuU4agAFTzcHFXa%2FTinfrCk1sqF%2FoveZ3hNys6FYbWN7kj1GkiSQ1J6eNsEaQrmkwT9YM7wff%2FyQpU5d0NDwGfupIiOxqD7Cy7K%2BVCtJDRis9BTF9TFVH4LpnaUI%2BZeA8YZ3w7OsqrGWnSBmrcdxD8RkWPbg%2FTtqOCFnjQ1iQACCu1eaewCAA&x-oss-date=20260330T011908Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXb8T7QTpKJrosMWPfgWWAmDz%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=77bfd3b3c69419b432d01da734bd0874ea71ca36f1829fbd2c7f9f32f56257ad
+2026/03/30 05:19:11 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:19:11 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:19:11 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:19:11 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"bea34a1b-a406-4108-8b08-948a15684c92","choices":[{"finish_reason":"stop","index":0,"message":{"content":"code","role":"assistant"}}],"created":1774833551,"id":"50916cc1-6bd8-45f9-b7fb-d78d240407df","model":"qwen3-vl-plus","object":"chat.completion","parentId":"50916cc1-6bd8-45f9-b7fb-d78d240407df","usage":{"cached_tokens":0,"characters":0,"image_tokens":3110,"input_tokens":3354,"input_tokens_details":{"image_tokens":3110,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":3356}}
+2026/03/30 05:19:11 [ScreenOrganizer] ------------------------
+2026/03/30 05:19:11 [ScreenOrganizer] AI parsed answer: 'code'
+2026/03/30 05:19:11 [ScreenOrganizer] AI chose folder: 'code'
+2026/03/30 05:19:11 [ScreenOrganizer] Screenshot saved to: C:\screanshots\code\2026-03-30_05-19-11.png
+2026/03/30 05:19:17 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:19:17 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:19:18 [ScreenOrganizer] Region selected: (113,114)-(1431,1053)
+2026/03/30 05:19:18 [ScreenOrganizer] Cropped screenshot: 1318x939, 177906 bytes
+2026/03/30 05:19:18 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:19:20 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/37a96fcc-dc4e-46bc-85a7-232dfba91da4_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rxL%2FeDvJtY%2FLCyYWjjolo6Qf9%2BvPDx1jz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUlncYVsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FqZCoe5k39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTieMVIcOrxuU4agAGAZlacLFT4mq87NadT%2Bh37p7OPk0LmuiZD2fQuK1mY4VWK0xEQuK2CFn2bo6z4d5ojNZTFx9veDEhy5%2BkIlZuAxcnbGg1CcIpGuAKew7cmGMayiWP3fC73TJvUijcvSQZUZocM%2BI3roFWvV7jqVBJqaOuk42S9WSNUGOQ1b0kveSAA&x-oss-date=20260330T011920Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYDdM7QDyKrYcNRFZoMpRS5Z4%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=e57e675cd0a6680278907cb269ea607d2e0cd1894ea7b6883081e20e8ddd34d9
+2026/03/30 05:19:22 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:19:22 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:19:22 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:19:22 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"4fe2b1ad-45d0-406b-9a8e-043b938c6aff","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774833562,"id":"bb50b371-d09c-4357-9c42-1867828514c1","model":"qwen3-vl-plus","object":"chat.completion","parentId":"bb50b371-d09c-4357-9c42-1867828514c1","usage":{"cached_tokens":0,"characters":0,"image_tokens":1191,"input_tokens":1435,"input_tokens_details":{"image_tokens":1191,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":1437}}
+2026/03/30 05:19:22 [ScreenOrganizer] ------------------------
+2026/03/30 05:19:22 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/30 05:19:22 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/30 05:19:22 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_05-19-22.png
+2026/03/30 05:24:40 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 05:24:43 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 05:24:43 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 05:24:43 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 05:24:43 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 05:24:43 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 05:24:43 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 05:24:43 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 05:24:44 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 05:24:44 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 05:24:50 [ScreenOrganizer] Region selected: (415,177)-(2063,1159)
+2026/03/30 05:24:50 [ScreenOrganizer] Cropped screenshot: 1648x982, 100100 bytes
+2026/03/30 05:24:50 [ScreenOrganizer] Found 3 folders: [anime code etc]
+2026/03/30 05:24:53 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/79c6c4de-6852-4947-b39a-eb24dc79a973_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5rNGojlmIlqzarcR1PHjW0kRL0YjLOfozz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVxru8UsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FgZgLv4GcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iCwll0erxuU4agAEq2mBQhtKaGb82DrPoFy57M79Xvaq7c3Olk3jI0T0Zw94Nf3309rrluw3%2Fv1i3KNsVoGfyHDYmbAuGUKgDSLcHkjgT5NQI1jW3sbjFZvEs2X%2F4hix07gpJS5x8JX6z7BXEuX7ZBUZyAL0mVZ4k4p5C2rPXbf2mWV5rRpQOf3aosCAA&x-oss-date=20260330T012452Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYxQ2QuVKzh7EuvimqH24cv4A%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=a235db53c4de26f6f13da95d8b92c9b6f4aaa3dd4bcc12394f243ccf3ae51a9d
+2026/03/30 05:24:55 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 05:24:55 [ScreenOrganizer] Available folders: [anime code etc]
+2026/03/30 05:24:55 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 05:24:55 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"1cd54ae5-8b4c-4c92-9de4-576fa972bb1f","choices":[{"finish_reason":"stop","index":0,"message":{"content":"code","role":"assistant"}}],"created":1774833895,"id":"e7e1a6f9-c636-4e4b-8636-54caa2144238","model":"qwen3-vl-plus","object":"chat.completion","parentId":"e7e1a6f9-c636-4e4b-8636-54caa2144238","usage":{"cached_tokens":0,"characters":0,"image_tokens":1614,"input_tokens":1858,"input_tokens_details":{"image_tokens":1614,"text_tokens":244},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":1860}}
+2026/03/30 05:24:55 [ScreenOrganizer] ------------------------
+2026/03/30 05:24:55 [ScreenOrganizer] AI parsed answer: 'code'
+2026/03/30 05:24:55 [ScreenOrganizer] AI chose folder: 'code'
+2026/03/30 05:24:55 [ScreenOrganizer] Screenshot saved to: C:\screanshots\code\2026-03-30_05-24-55.png
+2026/03/30 12:10:17 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 12:10:17 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 12:10:17 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 12:10:17 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 12:10:17 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 12:10:17 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 12:10:17 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 12:11:04 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:11:04 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:11:07 [ScreenOrganizer] Region selected: (0,0)-(312,1439)
+2026/03/30 12:11:07 [ScreenOrganizer] Cropped screenshot: 312x1439, 121224 bytes
+2026/03/30 12:11:07 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:11:08 [ScreenOrganizer] ERROR: Failed to upload screenshot to QwenServer: upload HTTP 500: {"error":"Ошибка при загрузке файла: qwen http 500: Internal server error."}
+2026/03/30 12:11:57 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:11:57 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:11:59 [ScreenOrganizer] Region selected: (198,117)-(1819,1104)
+2026/03/30 12:11:59 [ScreenOrganizer] Cropped screenshot: 1621x987, 101508 bytes
+2026/03/30 12:11:59 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:11:59 [ScreenOrganizer] ERROR: Failed to upload screenshot to QwenServer: upload HTTP 500: {"error":"Ошибка при загрузке файла: qwen http 500: Internal server error."}
+2026/03/30 12:12:57 [ScreenOrganizer] Received signal interrupt. Shutting down...
+2026/03/30 12:24:14 [ScreenOrganizer] Configuration loaded successfully
+2026/03/30 12:24:14 [ScreenOrganizer] Root directory: C:\screanshots
+2026/03/30 12:24:14 [ScreenOrganizer] QwenServer URL: http://localhost:3264
+2026/03/30 12:24:14 [ScreenOrganizer] AI model: Qwen3-VL-235B-A22B
+2026/03/30 12:24:14 [ScreenOrganizer] Hotkey: ctrl+shift+s
+2026/03/30 12:24:14 [ScreenOrganizer] Global hotkey 'ctrl+shift+s' registered. Press it to capture and organize a screenshot.
+2026/03/30 12:24:14 [ScreenOrganizer] Press Ctrl+C to exit.
+2026/03/30 12:24:15 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:24:15 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:24:16 [ScreenOrganizer] Region selected: (623,299)-(1900,1374)
+2026/03/30 12:24:16 [ScreenOrganizer] Cropped screenshot: 1277x1075, 67612 bytes
+2026/03/30 12:24:16 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:24:19 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/10db5f17-d801-4b23-a9c9-9d991e84fdaa_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5mDL8DNqL1w3piNc0eIgGovT%2Bh414Dnjzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUwpcgCsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FiZotclOcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iOAhjQurxuU4agAF3Ip6pP087k6Wz5Igyj8%2Bit61F7pvvh9SMyFk01Zri7NQAe3y4jruBoDX33oTTVJ8ebEI8ncNisAn86grQAJGhJonCsFNFsrAYe%2BI3C8lXc9q%2BiWn%2BhiuFISU1xeZZANyurPQloGcfjMvbUtgslhPUrPpJth29ZjAaTRW31EvlxyAA&x-oss-date=20260330T082419Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZ6dzyEbQiZfqa9djzCgT8ELm%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=d0b93adb1d108e9b9295d262595a1aed8cf2ea215624bc3da8dedfbb284cf882
+2026/03/30 12:24:22 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:24:22 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:24:22 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:24:22 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"be2d358d-196f-4979-9bee-5d6f9be45944","choices":[{"finish_reason":"stop","index":0,"message":{"content":"code","role":"assistant"}}],"created":1774859062,"id":"f66204e8-1add-4a47-8e38-4c9f3aae2c27","model":"qwen3-vl-plus","object":"chat.completion","parentId":"f66204e8-1add-4a47-8e38-4c9f3aae2c27","usage":{"cached_tokens":0,"characters":0,"image_tokens":1362,"input_tokens":1608,"input_tokens_details":{"image_tokens":1362,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":1610}}
+2026/03/30 12:24:22 [ScreenOrganizer] ------------------------
+2026/03/30 12:24:22 [ScreenOrganizer] AI parsed answer: 'code'
+2026/03/30 12:24:22 [ScreenOrganizer] AI chose folder: 'code'
+2026/03/30 12:24:22 [ScreenOrganizer] Screenshot saved to: C:\screanshots\code\2026-03-30_12-24-22.png
+2026/03/30 12:24:25 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:24:25 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:24:28 [ScreenOrganizer] Region selected: (8,9)-(2048,1414)
+2026/03/30 12:24:28 [ScreenOrganizer] Cropped screenshot: 2040x1405, 590318 bytes
+2026/03/30 12:24:28 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:24:30 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/511b0ec2-adf6-4443-af39-c42e1e74ae81_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5r4Pfz2pZIThIyOb1f11lMDYuVgnKjnkDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVR4PADsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkYgIc5OcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iWAGcA%2BrxuU4agAGIm7%2FLdshTidqsZbFJLB3qnW%2FGLTUz%2F0k77J6hFJrfBTJ7r0GlremCpYFzixU40v8bG2nyyLmOsihZ455HAJqXBD3%2F2lqWRFozZGv91yXRtbsPgPbNF3F7oYuq4zdU0e16Q2ANoUc9a6lAqq4VlEDwamiYpM1kheO4mBRG4966%2FiAA&x-oss-date=20260330T082430Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYMvFBHM23NemqD2SVnjLsmLr%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=1e096feb728e6344fea21053754379d377664a63a64c6c1ba6444f40a68897af
+2026/03/30 12:24:33 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:24:33 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:24:33 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:24:33 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"5786cfb5-61d1-410f-84c7-1ad1b849ea7e","choices":[{"finish_reason":"stop","index":0,"message":{"content":"discord","role":"assistant"}}],"created":1774859073,"id":"47a235b1-d192-4eb7-b83f-20517762082c","model":"qwen3-vl-plus","object":"chat.completion","parentId":"47a235b1-d192-4eb7-b83f-20517762082c","usage":{"cached_tokens":0,"characters":0,"image_tokens":2818,"input_tokens":3064,"input_tokens_details":{"image_tokens":2818,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":3066}}
+2026/03/30 12:24:33 [ScreenOrganizer] ------------------------
+2026/03/30 12:24:33 [ScreenOrganizer] AI parsed answer: 'discord'
+2026/03/30 12:24:33 [ScreenOrganizer] AI chose folder: 'discord'
+2026/03/30 12:24:33 [ScreenOrganizer] Screenshot saved to: C:\screanshots\discord\2026-03-30_12-24-33.png
+2026/03/30 12:27:49 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:27:49 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:27:51 [ScreenOrganizer] Region selected: (2860,155)-(3755,682)
+2026/03/30 12:27:51 [ScreenOrganizer] Cropped screenshot: 895x527, 444481 bytes
+2026/03/30 12:27:51 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:27:55 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/c389c2e8-806e-49d7-8b12-2771f112ff16_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nhMf31q%2BoX5qqfU3SEg00lattrgo2SoDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksU0%2B9ADsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FiYqu88OcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37i0jkererxuU4agAFRjzB3z3urkeXD2GIfsg0X3M5h0cigo%2FuxB4FjcSj2XvykZOfHzmCfDIEoeVsUHktZuGrLkh6Tbjb7DvvN6KtRglrx3KFrzgHOa0hDapnLR5n2epBcKvEnobloYQn5vxpkEr9q0b9LtWUBlv0qTSmK%2BFA4gRfUo9A2%2BCDAFGH4NCAA&x-oss-date=20260330T082754Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZTzGAF56QhtQR5gMpfTGmH9B%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=a64f32f889ba7b30dc6f15ec972fb4fcfb33f9f04bef75b60f4c58935adab063
+2026/03/30 12:27:57 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:27:57 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:27:57 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:27:57 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"12cbe6d5-e630-43a8-8441-0b6b02ddc444","choices":[{"finish_reason":"stop","index":0,"message":{"content":"discord","role":"assistant"}}],"created":1774859277,"id":"d5464ac8-27d0-4ae9-a85f-56f7fac9cb09","model":"qwen3-vl-plus","object":"chat.completion","parentId":"d5464ac8-27d0-4ae9-a85f-56f7fac9cb09","usage":{"cached_tokens":0,"characters":0,"image_tokens":450,"input_tokens":696,"input_tokens_details":{"image_tokens":450,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":698}}
+2026/03/30 12:27:57 [ScreenOrganizer] ------------------------
+2026/03/30 12:27:57 [ScreenOrganizer] AI parsed answer: 'discord'
+2026/03/30 12:27:57 [ScreenOrganizer] AI chose folder: 'discord'
+2026/03/30 12:27:57 [ScreenOrganizer] Screenshot saved to: C:\screanshots\discord\2026-03-30_12-27-57.png
+2026/03/30 12:28:02 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:28:02 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:28:05 [ScreenOrganizer] Region selected: (2646,22)-(3887,515)
+2026/03/30 12:28:06 [ScreenOrganizer] Cropped screenshot: 1241x493, 908670 bytes
+2026/03/30 12:28:06 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:28:07 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/ca904ea9-42d8-4ea7-a8c3-5c053ef5cb24_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5vBGNjZqoVQ8JOzd0X8sXMFP%2Bhi3JPYgzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVMw8wAsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FravpvJI39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiAm1HperxuU4agAEygwz1FJd1Htu2tFVS1Nm1QfxUd7jsxy6YjSzExhKksvWCDsmerpv%2FhuRhF7%2BYDT77wy1Vd5xLmCC8xKkXorcEhDMsE04LRwyRLQ8MNmh84eiJwiifnkoL8Q%2FoRoTzIPy0%2BviCR2Q2RANzaZ%2BPQ4Q%2Bo96W4xki7LwX0fqv02fYVyAA&x-oss-date=20260330T082808Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NXtSbmGZqGQXucMUsP3gN3Vsa%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=e75f413a0672d930a412a012c465439a3416d590be53047497127d5cf16c8964
+2026/03/30 12:28:10 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:28:10 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:28:10 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:28:10 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"78b9ef1b-63fa-4853-b019-124db298d14f","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774859290,"id":"4748a713-0cfa-45c2-8819-cd62f41c2e06","model":"qwen3-vl-plus","object":"chat.completion","parentId":"4748a713-0cfa-45c2-8819-cd62f41c2e06","usage":{"cached_tokens":0,"characters":0,"image_tokens":587,"input_tokens":833,"input_tokens_details":{"image_tokens":587,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":835}}
+2026/03/30 12:28:10 [ScreenOrganizer] ------------------------
+2026/03/30 12:28:10 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/30 12:28:10 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/30 12:28:10 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_12-28-10.png
+2026/03/30 12:29:16 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:29:16 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:29:20 [ScreenOrganizer] Region selected: (396,640)-(755,990)
+2026/03/30 12:29:20 [ScreenOrganizer] Cropped screenshot: 359x350, 125703 bytes
+2026/03/30 12:29:20 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:29:23 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/05696480-4ab1-4831-818e-5197f97c8d5b_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nXB8PC1IlL5vaMMX6Ao2UHWclLhJPTpzz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksV55KANsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FgYhpcwucX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iWA60HOrxuU4agAFRweJIHzJxu5qWHvpmu51PfaNul8J0%2F2qxFRyBOfGcD2AkUApwKBaTtwK%2BweGUG9HJlZIua0XahxmSWbPgMEkQh8E45HlXhUoXZu4D714mFAjWDlsGYT%2FTmF5YjD5d6lPkCdWAL4fnmOe%2FU%2BfFKwjVhMTaUOVoek%2BYMPbcnLysziAA&x-oss-date=20260330T082922Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZbLyv9VjQ4g3X1GeRUFgkVxE%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=ec3e3fb69a516e6f3fa6f629dd85d260298d0c67f6268f5f7affb6a94b92cf54
+2026/03/30 12:29:25 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:29:25 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:29:25 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:29:25 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"b31cd1ae-6bf9-4f93-a544-443d586d4895","choices":[{"finish_reason":"stop","index":0,"message":{"content":"anime","role":"assistant"}}],"created":1774859365,"id":"7e49e25f-8d62-4342-9f3d-d5066a801726","model":"qwen3-vl-plus","object":"chat.completion","parentId":"7e49e25f-8d62-4342-9f3d-d5066a801726","usage":{"cached_tokens":0,"characters":0,"image_tokens":123,"input_tokens":369,"input_tokens_details":{"image_tokens":123,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":371}}
+2026/03/30 12:29:25 [ScreenOrganizer] ------------------------
+2026/03/30 12:29:25 [ScreenOrganizer] AI parsed answer: 'anime'
+2026/03/30 12:29:25 [ScreenOrganizer] AI chose folder: 'anime'
+2026/03/30 12:29:25 [ScreenOrganizer] Screenshot saved to: C:\screanshots\anime\2026-03-30_12-29-25.png
+2026/03/30 12:29:30 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:29:30 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:29:34 [ScreenOrganizer] Region selected: (397,142)-(654,503)
+2026/03/30 12:29:34 [ScreenOrganizer] Cropped screenshot: 257x361, 111808 bytes
+2026/03/30 12:29:34 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:29:36 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/0c1c1ce9-df24-431e-bbea-01d9c84f4bf8_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5ndBo7l1I9z87C7YXWEpVRjePleipbypDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUdiecOsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2Fmaj8vdg39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTijbnfU%2BrxuU4agAGKOWhDuTMHEVPBfF8tzmuPwp%2FwLu%2FrnfAP6lcPt7A%2BdZj4vihEAZoxovPhJDrHIxDdd6f1G9iyh%2FWZQPQzTi92z5A2apeRAHQmrRChOT6%2BpyldO9EU9I46rnkfIru0sCKti7gEbHgSgqkeT2%2Bt1CYIoa5Wz27iXHdGKgP9bCHoWCAA&x-oss-date=20260330T082937Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZhM4Q9PRDrPcS5AT6tvreSYF%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=900fc87a0615cd72c1c64eef6ae9efae312297cdc85d97c2baea4c48afdff024
+2026/03/30 12:29:44 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:29:44 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:29:44 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:29:44 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"ba1faf1e-f6d8-4a7b-aad5-daecd1938496","choices":[{"finish_reason":"stop","index":0,"message":{"content":"anime","role":"assistant"}}],"created":1774859384,"id":"dfceb1c0-ca63-4474-a891-5fa7fff92610","model":"qwen3-vl-plus","object":"chat.completion","parentId":"dfceb1c0-ca63-4474-a891-5fa7fff92610","usage":{"cached_tokens":0,"characters":0,"image_tokens":90,"input_tokens":336,"input_tokens_details":{"image_tokens":90,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":338}}
+2026/03/30 12:29:44 [ScreenOrganizer] ------------------------
+2026/03/30 12:29:44 [ScreenOrganizer] AI parsed answer: 'anime'
+2026/03/30 12:29:44 [ScreenOrganizer] AI chose folder: 'anime'
+2026/03/30 12:29:44 [ScreenOrganizer] Screenshot saved to: C:\screanshots\anime\2026-03-30_12-29-44.png
+2026/03/30 12:29:55 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:29:55 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:29:57 [ScreenOrganizer] Region selected: (891,423)-(980,545)
+2026/03/30 12:29:57 [ScreenOrganizer] Cropped screenshot: 89x122, 15749 bytes
+2026/03/30 12:29:57 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:29:59 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/5564c0c7-7688-412e-8f8f-b0276edba4fc_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5raGsvb26xx%2FKPSVHT6nTVhQelhip%2FDkTz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUGxs0NsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FubureEucX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37iCqRroerxuU4agAF%2BHCHjtPbYpexCGpJYyMgWEH%2FTJLDKSBepry%2FTTNTU3PmdJJdaq5Mh%2FEhLcPQE4VesvbYkY%2BZOECGk3uQ2mn9pQaVBr%2BgKzv1vft0zg4G5uJ8Qe8kChhOgbSN7eJLm8s1sqqOEG3OLSKIgEp%2FluSCMtam3AIo3CQJrdU4uGpSajSAA&x-oss-date=20260330T083000Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NYoQqo6sPKa9VRKy54MfMeZhs%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=f9ef9b7aba309a594842cfbf1ea168c07fc6881dc359ff6605975bc9e42479b7
+2026/03/30 12:30:01 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:30:01 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:30:01 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:30:01 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"d2aa5ee6-a879-49c8-9263-3b49567d964c","choices":[{"finish_reason":"stop","index":0,"message":{"content":"anime","role":"assistant"}}],"created":1774859401,"id":"dfab322c-6da7-48e4-8a1e-b9b8bf94a67b","model":"qwen3-vl-plus","object":"chat.completion","parentId":"dfab322c-6da7-48e4-8a1e-b9b8bf94a67b","usage":{"cached_tokens":0,"characters":0,"image_tokens":72,"input_tokens":318,"input_tokens_details":{"image_tokens":72,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":320}}
+2026/03/30 12:30:01 [ScreenOrganizer] ------------------------
+2026/03/30 12:30:01 [ScreenOrganizer] AI parsed answer: 'anime'
+2026/03/30 12:30:01 [ScreenOrganizer] AI chose folder: 'anime'
+2026/03/30 12:30:01 [ScreenOrganizer] Screenshot saved to: C:\screanshots\anime\2026-03-30_12-30-01.png
+2026/03/30 12:30:11 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:30:11 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:30:13 [ScreenOrganizer] Region selected: (34,35)-(2315,1397)
+2026/03/30 12:30:13 [ScreenOrganizer] Cropped screenshot: 2281x1362, 457714 bytes
+2026/03/30 12:30:13 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:30:15 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/9798f960-0a09-4fa4-ad59-32effb03feea_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nTBur%2FoLhI0ZuSVxLcoTQsVcl7vpbpmjz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVTmJkHsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FkZE6%2Ft439vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiJYyTzOrxuU4agAGGpORUpUuWBD1XSvNXE7IxybAaneK7ilNbUEXOkOuyy46Lr21MAfNZ06tvtk6YFhJWNT6LLR1ZndDpPcCp0Wq1KhE2sPJkXNjzQY%2FOpLYkY70vXaertgUwAp1AuhJLxNWb%2FpUBnpewpnLTIuI88E4Ox1Aj34SFRqVTg3QUgQLvPCAA&x-oss-date=20260330T083016Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZfMPKMgifYyU4mE4yYFWQSBx%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=0b2fb2b9a58d46dbbe97ea74227a048d451a29ac1890a6210574ae5e5ce35a8b
+2026/03/30 12:30:22 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:30:22 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:30:22 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:30:22 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"a89daf74-bb43-4f5b-8b7a-2cf071d53e7d","choices":[{"finish_reason":"stop","index":0,"message":{"content":"discord","role":"assistant"}}],"created":1774859422,"id":"bb212d07-2b2a-4f97-8e3b-75f213b6ef6e","model":"qwen3-vl-plus","object":"chat.completion","parentId":"bb212d07-2b2a-4f97-8e3b-75f213b6ef6e","usage":{"cached_tokens":0,"characters":0,"image_tokens":3055,"input_tokens":3301,"input_tokens_details":{"image_tokens":3055,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":3303}}
+2026/03/30 12:30:22 [ScreenOrganizer] ------------------------
+2026/03/30 12:30:22 [ScreenOrganizer] AI parsed answer: 'discord'
+2026/03/30 12:30:22 [ScreenOrganizer] AI chose folder: 'discord'
+2026/03/30 12:30:22 [ScreenOrganizer] Screenshot saved to: C:\screanshots\discord\2026-03-30_12-30-22.png
+2026/03/30 12:30:29 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:30:29 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:30:30 [ScreenOrganizer] Region selected: (30,21)-(2392,1380)
+2026/03/30 12:30:30 [ScreenOrganizer] Cropped screenshot: 2362x1359, 254851 bytes
+2026/03/30 12:30:30 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:30:32 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/e4148b26-e516-4424-9922-06cf95367f57_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5nSKOPcmbpx4Ifdb1byjlhgOP5gqqHz0zz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksUFjakAsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FuaittB%2BcX6lIniYYa61rD9q9eLnNgjPEHUE7TZGpF9U5FEJVv4kDKnd5WarfsNS895Bq3%2BMm37ifumsNurxuU4agAFjUWpraTvNFi7CZm9FFxpX7DiqnS1ZxMrEiqrKtD3CFpDiFgtNyMIDz%2BqHHnVBZJfTSly6l75A8i9uE2keSwr3DKKKnPerKevhBFRxx%2B4bf5O5odO3ohOBwFFMyk43RtCuZ%2BVv6vKi9y7u322hJ05dukAT24Qg%2BMBnJanfVKE6iCAA&x-oss-date=20260330T083033Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZgcYhtePWE6mpCjX54qLEdX1%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=43f5763b83208fca44818312ee537e7635b3efd2dc3d289f841e86aeb4442a3c
+2026/03/30 12:30:34 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:30:34 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:30:34 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:30:34 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"8ed223d4-a5c7-44f9-9a3f-0ca913bbaec0","choices":[{"finish_reason":"stop","index":0,"message":{"content":"code","role":"assistant"}}],"created":1774859434,"id":"6b7adfeb-c59a-44f9-b8c8-cea0d2601e7a","model":"qwen3-vl-plus","object":"chat.completion","parentId":"6b7adfeb-c59a-44f9-b8c8-cea0d2601e7a","usage":{"cached_tokens":0,"characters":0,"image_tokens":3110,"input_tokens":3356,"input_tokens_details":{"image_tokens":3110,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":3358}}
+2026/03/30 12:30:34 [ScreenOrganizer] ------------------------
+2026/03/30 12:30:34 [ScreenOrganizer] AI parsed answer: 'code'
+2026/03/30 12:30:34 [ScreenOrganizer] AI chose folder: 'code'
+2026/03/30 12:30:34 [ScreenOrganizer] Screenshot saved to: C:\screanshots\code\2026-03-30_12-30-34.png
+2026/03/30 12:30:52 [ScreenOrganizer] Hotkey pressed! Capturing screenshot...
+2026/03/30 12:30:52 [ScreenOrganizer] Full screen captured ((0,0)-(3920,1440))
+2026/03/30 12:30:55 [ScreenOrganizer] Region selected: (1099,1413)-(1923,1439)
+2026/03/30 12:30:55 [ScreenOrganizer] Cropped screenshot: 824x26, 16519 bytes
+2026/03/30 12:30:55 [ScreenOrganizer] Found 4 folders: [anime code discord etc]
+2026/03/30 12:30:56 [ScreenOrganizer] Screenshot uploaded, URL: https://qwen-webui-prod.oss-accelerate.aliyuncs.com/e8a9a560-cbee-4522-9f40-fb442883bd28/4f93e4f7-35c0-41a2-a096-a103d737df83_screenshot.png?x-oss-security-token=CAIS0AJ1q6Ft5B2yfSjIr5n0BcyFvOdM7bKhZE7B3TkhOPpZgoTurDz2IHhMf3RvBeAbs%2Fs1lWBZ7vwflrN6SJtIXleCZtF94plR7QKoZ73Zocur7LAJksVsmKYAsEWpsvXJasDVEfn%2FGJ70GX2m%2BwZ3xbzlD0bAO3WuLZyOj7N%2Bc90TRXPWRDFaBdBQVGAAwY1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZN%2BNmgecP%2FNpE3bMwiCYyPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruE3eaLeLro0ycVAjN%2FhrQ%2FQZtpn1lvl1ofeWkJznAJW0o2rsz001LaPXI6uscIvBXr5R%2FoZLK%2B5I39vG4DWfBomw24j%2FiK%2FAAe8KayYWJ1VFYVrBEYys81vhCQzAQJPO28xYnOQzoRyGktTiUDbxrOrxuU4agAEW%2FKiD840lf6VR4bJqpM6Bmx80Nnu2qMT6Eb6uQNXL%2FwLSWZiwtZNjKn7hUAtrggmMO2TGxxr9yik8l1E1tJygDlLxJ%2FtKDV72OJNsVMm2TP%2BxZ1xv2vDTa3pj16YhRFi6lO%2BNMWX5NKFwtyiyLTGpOm0%2Fuk7tokuO95m6mcX32SAA&x-oss-date=20260330T083057Z&x-oss-expires=300&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZANv1Q8mZpJfhp99t4uumAEN%2F20260330%2Fap-southeast-1%2Foss%2Faliyun_v4_request&x-oss-signature=9bb7fe75efc68a645fcc363bb3511763fbdd0fb681e6835cac95560ad6cd7913
+2026/03/30 12:30:58 [ScreenOrganizer] --- AI REQUEST DEBUG ---
+2026/03/30 12:30:58 [ScreenOrganizer] Available folders: [anime code discord etc]
+2026/03/30 12:30:58 [ScreenOrganizer] Prompt sent: You are an intelligent file organizer. Analyze the prominent subject, context, and intent of the provided screenshot.
+
+Available category folders:
+anime, code, discord, etc
+
+Instructions:
+1. Determine the core topic of the image (e.g., code, gaming, chat, meme, receipt, work document).
+2. Find the *best matching* folder from the list provided. Consider synonyms and broad categories (e.g., a screenshot of Discord might belong in "Social" or "Chat", while VS Code belongs in "Code" or "Work").
+3. If there is a highly specific matching folder, use it. Keep in mind that users might name folders generically.
+4. If absolutely no folder matches the context (e.g., it's a completely random image), return "etc" as a fallback.
+
+CRITICAL RULE: Return ONLY the exact exact name of the selected folder. Do not add explanations, brackets, quotes, or trailing punctuation. Output exactly the folder name.
+2026/03/30 12:30:58 [ScreenOrganizer] RAW QwenServer JSON Response: {"chatId":"cf3259b4-d036-4e17-bf06-1832581104fa","choices":[{"finish_reason":"stop","index":0,"message":{"content":"etc","role":"assistant"}}],"created":1774859458,"id":"3445461b-434a-454d-89c5-48fe36fd028f","model":"qwen3-vl-plus","object":"chat.completion","parentId":"3445461b-434a-454d-89c5-48fe36fd028f","usage":{"cached_tokens":0,"characters":0,"image_tokens":94,"input_tokens":340,"input_tokens_details":{"image_tokens":94,"text_tokens":246},"output_tokens":2,"output_tokens_details":{"text_tokens":2},"total_tokens":342}}
+2026/03/30 12:30:58 [ScreenOrganizer] ------------------------
+2026/03/30 12:30:58 [ScreenOrganizer] AI parsed answer: 'etc'
+2026/03/30 12:30:58 [ScreenOrganizer] AI chose folder: 'etc'
+2026/03/30 12:30:58 [ScreenOrganizer] Screenshot saved to: C:\screanshots\etc\2026-03-30_12-30-58.png
+2026/03/30 12:31:10 [ScreenOrganizer] Received signal interrupt. Shutting down...
