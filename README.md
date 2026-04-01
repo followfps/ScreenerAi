@@ -1,4 +1,4 @@
-# ScreanerAi — Intelligent Screenshot Organizer 📸🤖
+# ScreenerAi — Intelligent Screenshot Organizer 📸🤖
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)
