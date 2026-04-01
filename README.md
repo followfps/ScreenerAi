@@ -1,86 +1,85 @@
-# Screenshot Organizer with Qwen Vision AI
+# ScreanerAi — Intelligent Screenshot Organizer 📸🤖
 
-A Go desktop application that captures a screenshot on a global hotkey press and uses the local **QwenServer** (Qwen Vision AI proxy) to automatically sort it into the most relevant folder.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)
+![Go](https://img.shields.io/badge/go-1.21%2B-blue.svg)
 
-## How It Works
+**ScreanerAi** is a modern Windows application that transforms screenshot chaos into a structured library. Using the power of the **Qwen-VL** multimodal neural network, the app automatically analyzes the content of your screen captures and saves them into the most relevant thematic folders.
 
-1. **Press the hotkey** (default: `Ctrl+Shift+S`) — the app captures your primary monitor
-2. **Image uploaded to QwenServer** — via `/api/files/upload`
-3. **AI analyzes the screenshot** — sends the image to Qwen Vision model along with your folder names
-4. **Saves to the right folder** — the screenshot is saved with a timestamped filename in the AI-chosen directory
+---
 
-## Prerequisites
+## ✨ Key Features
 
-- **Go 1.21+** — [Download Go](https://go.dev/dl/)
-- **QwenServer** running locally (from the `QwenServer` folder)
-- **Windows** (primary target; also works on macOS/Linux)
+- 🧠 **Smart Classification**: The AI "sees" the content of the screenshot and distributes it among your folders (Work, Code, Design, Games, etc.).
+- 🖼️ **Area Capture**: A convenient selection tool for any part of the screen (similar to "Snipping Tool", but smarter).
+- 📋 **Clipboard Monitoring**: Automatic processing of images copied to the clipboard from other applications.
+- ⚙️ **Flexible Configuration**: 
+  - Record custom global hotkeys.
+  - Adjust selection area opacity and color.
+  - Dark and Light theme support (Fluent Design).
+- 🚀 **Auto-startup**: Option to launch with Windows for instant access.
+- 🔔 **Native Notifications**: Information about where the screenshot was saved, right in the Windows notification center.
 
-## Setup
+---
 
-### 1. Start QwenServer
+## 🛠 Tech Stack
 
-```bash
-cd QwenServer
-./qwen_server.exe
-```
+- **Language**: [Go (Golang)](https://go.dev/)
+- **UI**: [WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) (HTML/JS/CSS for the settings window)
+- **Graphics**: Win32 GDI API (for the capture overlay)
+- **AI**: Integration with Qwen-VL via a local proxy server.
 
-The server runs at `http://localhost:3264` by default.
+---
 
-### 2. Configure
+## 🚀 Quick Start
 
-Edit `config.yaml`:
+### Build from Source
+You will need Go 1.21 or higher installed.
 
-```yaml
-hotkey: "ctrl+shift+s"
-root_directory: "C:\\screanshots"
-qwen_server_url: "http://localhost:3264"
-qwen_api_key: ""          # leave empty if no auth
-ai_model: "qwen-vl-max"   # vision model
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/ScreanerAi.git
+   cd ScreanerAi
+   ```
+2. Run the build script in PowerShell:
+   ```powershell
+   .\build.ps1
+   ```
+3. The ready files will be located in the `build/` directory.
 
-Create subdirectories inside your `root_directory`:
-```
-Screenshots/
-├── Work/
-├── Gaming/
-├── Code/
-├── Social/
-└── Other/
-```
+### AI Configuration
+To enable the AI, you need to add an authorization token:
+1. Go to [chat.qwen.ai](https://chat.qwen.ai/) and log in.
+2. Open developer tools (`F12`), go to the **Application** tab -> **Local Storage**.
+3. Find the `token` key and copy its value.
+4. In ScreanerAi, open **Settings** (right-click the tray icon) and paste the token into the **Qwen Session Token** field.
 
-### 3. Build & Run
+---
 
-```bash
-go mod tidy
-go build -o screener.exe .
-./screener.exe
-```
+## 🔍 How It Works?
 
-Press the configured hotkey to capture and organize a screenshot. Press `Ctrl+C` to stop.
+1. **Trigger**: You press a hotkey (default `Ctrl+Shift+S`) or copy an image to the buffer.
+2. **Capture**: The `selector_windows.go` module allows you to select an area.
+3. **Analysis**: The screenshot is sent to the built-in `QwenServer`.
+4. **Decision**: The neural network receives a list of your subfolders from the **Root Directory** and chooses the best one.
+5. **Saving**: The file is saved with a timestamp: `RootDirectory/Category/2024-01-01_12-00-00.png`.
 
-## Configuration Options
+---
 
-| Option            | Description                                           | Default                  |
-|-------------------|-------------------------------------------------------|--------------------------|
-| `hotkey`          | Global shortcut (format: `modifier+modifier+key`)     | `ctrl+shift+s`           |
-| `root_directory`  | Path containing subdirectories for sorting            | —                        |
-| `qwen_server_url` | QwenServer proxy URL                                  | `http://localhost:3264`  |
-| `qwen_api_key`    | API key (if `Authorization.txt` has keys)             | empty                    |
-| `ai_model`        | Qwen vision model                                     | `qwen-vl-max`            |
-| `prompt_template` | Instruction sent to AI (`{folders}` = placeholder)    | Built-in default         |
+## 🤝 Acknowledgments and Dependencies
 
-### Available Vision Models
+This project was made possible thanks to the following libraries:
+- **systray**: For system tray integration.
+- **webview2**: For the modern settings interface.
+- **hotkey**: For global hotkey support.
+- **screenshot**: For screen capture capabilities.
 
-| Model | Description |
-|-------|-------------|
-| `qwen-vl-max` | Best quality vision |
-| `qwen3-vl-plus` | Qwen3 vision |
-| `qvq-72b-preview-0310` | QVQ reasoning + vision |
-| `qwen2.5-vl-32b-instruct` | Qwen2.5 VL |
+### Special Thanks
+The project uses components from the **freeQwen** library (integrated into `QwenServer`) to provide seamless interaction with the Qwen neural network API. Without this module, implementing seamless classification would be significantly more difficult.
+https://github.com/y13sint/FreeQwenApi
 
-## Notes
+---
 
-- No CGO required on Windows
-- No external API keys needed — uses your local QwenServer
-- Screenshots saved as PNG with timestamp filenames (e.g., `2024-01-15_14-30-45.png`)
-- If the AI returns an invalid folder name, the first folder is used as a fallback
+## 📄 License
+
+This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for details.

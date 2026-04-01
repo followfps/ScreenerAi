@@ -5,6 +5,8 @@ package main
 import (
 	"image"
 	"runtime"
+	"strconv"
+	"strings"
 	"syscall"
 	"unsafe"
 )
@@ -48,8 +50,34 @@ var (
 	pBitBlt                 = gdi32w.NewProc("BitBlt")
 	pGetDC                  = user32w.NewProc("GetDC")
 	pReleaseDC              = user32w.NewProc("ReleaseDC")
+	pGetDesktopWindow       = user32w.NewProc("GetDesktopWindow")
+	pGetWindowDC            = user32w.NewProc("GetWindowDC")
+	pSetWindowPos           = user32w.NewProc("SetWindowPos")
+	pMoveWindow             = user32w.NewProc("MoveWindow")
 
 	pGetModuleHandleW = kernel32w.NewProc("GetModuleHandleW")
+
+	pCreateFontW = gdi32w.NewProc("CreateFontW")
+
+	shell32w              = syscall.NewLazyDLL("shell32.dll")
+	pSHBrowseForFolderW   = shell32w.NewProc("SHBrowseForFolderW")
+	pSHGetPathFromIDListW = shell32w.NewProc("SHGetPathFromIDListW")
+
+	ole32w        = syscall.NewLazyDLL("ole32.dll")
+	pCoInitialize = ole32w.NewProc("CoInitialize")
+
+	dwmapiw                = syscall.NewLazyDLL("dwmapi.dll")
+	pDwmSetWindowAttribute = dwmapiw.NewProc("DwmSetWindowAttribute")
+
+	uxthemew        = syscall.NewLazyDLL("uxtheme.dll")
+	pSetWindowTheme = uxthemew.NewProc("SetWindowTheme")
+
+	pGetWindowLongPtrW = user32w.NewProc("GetWindowLongPtrW")
+	pSetWindowLongPtrW = user32w.NewProc("SetWindowLongPtrW")
+	pSendMessageW      = user32w.NewProc("SendMessageW")
+
+	msimg32w    = syscall.NewLazyDLL("msimg32.dll")
+	pAlphaBlend = msimg32w.NewProc("AlphaBlend")
 )
 
 const (
@@ -58,15 +86,26 @@ const (
 	wsExLayered    = 0x00080000
 	wsExToolWindow = 0x00000080
 
-	wmDestroy     = 0x0002
-	wmPaint       = 0x000F
-	wmEraseBkgnd  = 0x0014
-	wmSetCursor   = 0x0020
-	wmKeyDown     = 0x0100
-	wmLButtonDown = 0x0201
-	wmLButtonUp   = 0x0202
-	wmMouseMove   = 0x0200
-	wmRButtonDown = 0x0204
+	gwlStyle = ^uintptr(15)
+
+	wmDestroy       = 0x0002
+	wmSize          = 0x0005
+	wmPaint         = 0x000F
+	wmEraseBkgnd    = 0x0014
+	wmSetCursor     = 0x0020
+	wmSetFont       = 0x0030
+	wmCtlColorBtn   = 0x0135
+	wmKeyDown       = 0x0100
+	wmLButtonDown   = 0x0201
+	wmLButtonUp     = 0x0202
+	wmMouseMove     = 0x0200
+	wmRButtonDown   = 0x0204
+	wmNcLButtonDown = 0x00A1
+
+	htCaption = 2
+
+	dwmwaUseImmersiveDarkMode = 20
+	swpNoZOrder               = 0x0004
 
 	vkEscape = 0x1B
 	swShow   = 5
@@ -86,10 +125,13 @@ const (
 	nullBrush = 5
 
 	colorMagenta = 0x00FF00FF
-	colorOverlay = 0x00333333
+	colorOverlay = 0x00000000
 	colorBorder  = 0x0000FF00
 
-	overlayAlpha = 120
+	overlayAlpha = 255
+	dimAlpha     = 140
+
+	acSrcOver = 0x00
 )
 
 type wRECT struct{ Left, Top, Right, Bottom int32 }
@@ -137,15 +179,34 @@ var sel struct {
 	cancelled      bool
 	hwnd           uintptr
 
-	// GDI objects
 	darkBrush uintptr
 	magBrush  uintptr
 	borderPen uintptr
 	cursor    uintptr
+
+	bgBitmap uintptr
+	bgDC     uintptr
+
+	dimmedDC     uintptr
+	dimmedBitmap uintptr
+
+	overlayAlpha byte
+	selectionClr uint32
 }
 
 func getXLParam(lp uintptr) int32 { return int32(int16(lp & 0xFFFF)) }
 func getYLParam(lp uintptr) int32 { return int32(int16((lp >> 16) & 0xFFFF)) }
+
+func parseColor(hex string) uint32 {
+	hex = strings.TrimPrefix(hex, "#")
+	if len(hex) != 6 {
+		return 0x0000FF00
+	}
+	r, _ := strconv.ParseUint(hex[0:2], 16, 8)
+	g, _ := strconv.ParseUint(hex[2:4], 16, 8)
+	b, _ := strconv.ParseUint(hex[4:6], 16, 8)
+	return uint32(r) | (uint32(g) << 8) | (uint32(b) << 16)
+}
 
 func minI32(a, b int32) int32 {
 	if a < b {
@@ -160,7 +221,6 @@ func maxI32(a, b int32) int32 {
 	return b
 }
 
-// selectorWndProc is the Win32 window procedure for the selection overlay.
 func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 	switch msg {
 	case wmEraseBkgnd:
@@ -174,15 +234,13 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 		pGetClientRect.Call(hwnd, uintptr(unsafe.Pointer(&rc)))
 		width, height := rc.Right-rc.Left, rc.Bottom-rc.Top
 
-		// Double buffering: Create compatible DC and Bitmap
 		memDC, _, _ := pCreateCompatibleDC.Call(hdc)
 		memBitmap, _, _ := pCreateCompatibleBitmap.Call(hdc, uintptr(width), uintptr(height))
 		oldBitmap, _, _ := pSelectObject.Call(memDC, memBitmap)
 
-		// Fill background into memory DC
-		pFillRect.Call(memDC, uintptr(unsafe.Pointer(&rc)), sel.darkBrush)
+		const srccopy = 0x00CC0020
+		pBitBlt.Call(memDC, 0, 0, uintptr(width), uintptr(height), sel.dimmedDC, 0, 0, srccopy)
 
-		// Draw selection area into memory DC
 		if sel.dragging || sel.done {
 			sr := wRECT{
 				Left:   minI32(sel.startX, sel.endX),
@@ -190,9 +248,13 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 				Right:  maxI32(sel.startX, sel.endX),
 				Bottom: maxI32(sel.startY, sel.endY),
 			}
-			pFillRect.Call(memDC, uintptr(unsafe.Pointer(&sr)), sel.magBrush)
 
-			// Draw border
+			selW := sr.Right - sr.Left
+			selH := sr.Bottom - sr.Top
+			if selW > 0 && selH > 0 {
+				pBitBlt.Call(memDC, uintptr(sr.Left), uintptr(sr.Top), uintptr(selW), uintptr(selH), sel.bgDC, uintptr(sr.Left), uintptr(sr.Top), srccopy)
+			}
+
 			oldPen, _, _ := pSelectObject.Call(memDC, sel.borderPen)
 			nb, _, _ := pGetStockObject.Call(nullBrush)
 			oldBrush, _, _ := pSelectObject.Call(memDC, nb)
@@ -201,11 +263,8 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 			pSelectObject.Call(memDC, oldBrush)
 		}
 
-		// Copy from memory DC to window DC
-		const srccopy = 0x00CC0020
 		pBitBlt.Call(hdc, 0, 0, uintptr(width), uintptr(height), memDC, 0, 0, srccopy)
 
-		// Cleanup mem DC
 		pSelectObject.Call(memDC, oldBitmap)
 		pDeleteObject.Call(memBitmap)
 		pDeleteDC.Call(memDC)
@@ -220,6 +279,7 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 		sel.endY = sel.startY
 		sel.dragging = true
 		pSetCapture.Call(hwnd)
+		pInvalidateRect.Call(hwnd, 0, 0)
 		return 0
 
 	case wmMouseMove:
@@ -263,6 +323,10 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 		pDeleteObject.Call(sel.darkBrush)
 		pDeleteObject.Call(sel.magBrush)
 		pDeleteObject.Call(sel.borderPen)
+		pDeleteObject.Call(sel.bgBitmap)
+		pDeleteDC.Call(sel.bgDC)
+		pDeleteObject.Call(sel.dimmedBitmap)
+		pDeleteDC.Call(sel.dimmedDC)
 		pPostQuitMessage.Call(0)
 		return 0
 	}
@@ -271,14 +335,16 @@ func selectorWndProc(hwnd, msg, wParam, lParam uintptr) uintptr {
 	return ret
 }
 
-// selectRegion shows a fullscreen semi-transparent overlay and lets the user
-// drag to select a rectangular region. Returns the selected rectangle in screen
-// coordinates and true, or an empty rectangle and false if cancelled.
-func selectRegion(vRect image.Rectangle) (image.Rectangle, bool) {
+func selectRegion(vRect image.Rectangle, opacity int, colorHex string) (image.Rectangle, bool) {
 	runtime.LockOSThread()
 	defer runtime.UnlockOSThread()
 
-	// Reset state
+	if opacity <= 0 {
+		opacity = 140
+	}
+	sel.overlayAlpha = byte(opacity)
+	sel.selectionClr = parseColor(colorHex)
+
 	sel.startX, sel.startY = 0, 0
 	sel.endX, sel.endY = 0, 0
 	sel.dragging = false
@@ -286,10 +352,44 @@ func selectRegion(vRect image.Rectangle) (image.Rectangle, bool) {
 	sel.cancelled = false
 	sel.hwnd = 0
 
+	hdcScreen, _, _ := pGetDC.Call(0)
+	defer pReleaseDC.Call(0, hdcScreen)
+
+	width := uintptr(vRect.Dx())
+	height := uintptr(vRect.Dy())
+
+	sel.bgDC, _, _ = pCreateCompatibleDC.Call(hdcScreen)
+	sel.bgBitmap, _, _ = pCreateCompatibleBitmap.Call(hdcScreen, width, height)
+	pSelectObject.Call(sel.bgDC, sel.bgBitmap)
+
+	const srccopy = 0x00CC0020
+	pBitBlt.Call(sel.bgDC, 0, 0, width, height, hdcScreen, uintptr(vRect.Min.X), uintptr(vRect.Min.Y), srccopy)
+
 	sel.darkBrush, _, _ = pCreateSolidBrush.Call(colorOverlay)
 	sel.magBrush, _, _ = pCreateSolidBrush.Call(colorMagenta)
-	sel.borderPen, _, _ = pCreatePen.Call(psSolid, 2, colorBorder)
+	sel.borderPen, _, _ = pCreatePen.Call(psSolid, 2, uintptr(sel.selectionClr))
 	sel.cursor, _, _ = pLoadCursorW.Call(0, idcCross)
+
+	sel.dimmedDC, _, _ = pCreateCompatibleDC.Call(hdcScreen)
+	sel.dimmedBitmap, _, _ = pCreateCompatibleBitmap.Call(hdcScreen, width, height)
+	pSelectObject.Call(sel.dimmedDC, sel.dimmedBitmap)
+
+	pBitBlt.Call(sel.dimmedDC, 0, 0, width, height, sel.bgDC, 0, 0, srccopy)
+
+	dimDC, _, _ := pCreateCompatibleDC.Call(hdcScreen)
+	dimBitmap, _, _ := pCreateCompatibleBitmap.Call(hdcScreen, width, height)
+	pSelectObject.Call(dimDC, dimBitmap)
+	pFillRect.Call(dimDC, uintptr(unsafe.Pointer(&wRECT{0, 0, int32(width), int32(height)})), sel.darkBrush)
+
+	blendVal := uint32(acSrcOver) | (uint32(0) << 8) | (uint32(sel.overlayAlpha) << 16) | (uint32(0) << 24)
+	pAlphaBlend.Call(
+		sel.dimmedDC, 0, 0, width, height,
+		dimDC, 0, 0, width, height,
+		uintptr(blendVal),
+	)
+
+	pDeleteObject.Call(dimBitmap)
+	pDeleteDC.Call(dimDC)
 
 	hInst, _, _ := pGetModuleHandleW.Call(0)
 	className := syscall.StringToUTF16Ptr("ScreenSelectorOverlay")
@@ -309,7 +409,7 @@ func selectRegion(vRect image.Rectangle) (image.Rectangle, bool) {
 		uintptr(unsafe.Pointer(className)),
 		0,
 		wsPopup,
-		uintptr(vRect.Min.X), uintptr(vRect.Min.Y), uintptr(vRect.Dx()), uintptr(vRect.Dy()),
+		uintptr(vRect.Min.X), uintptr(vRect.Min.Y), width, height,
 		0, 0, hInst, 0,
 	)
 	if hwnd == 0 {
@@ -317,13 +417,11 @@ func selectRegion(vRect image.Rectangle) (image.Rectangle, bool) {
 	}
 	sel.hwnd = hwnd
 
-	// Make window semi-transparent with magenta as the color key (fully transparent)
-	pSetLayeredWindowAttributes.Call(hwnd, colorMagenta, overlayAlpha, lwaColorKey|lwaAlpha)
+	pSetLayeredWindowAttributes.Call(hwnd, 0, overlayAlpha, lwaAlpha)
 
 	pShowWindow.Call(hwnd, swShow)
 	pSetForegroundWindow.Call(hwnd)
 
-	// Message loop
 	var msg wMSG
 	for {
 		ret, _, _ := pGetMessageW.Call(uintptr(unsafe.Pointer(&msg)), 0, 0, 0)
@@ -347,6 +445,5 @@ func selectRegion(vRect image.Rectangle) (image.Rectangle, bool) {
 		return image.Rectangle{}, false
 	}
 
-	// Offset by the virtual screen's origin to match the screenshot image's coordinate space
 	return image.Rect(x1+vRect.Min.X, y1+vRect.Min.Y, x2+vRect.Min.X, y2+vRect.Min.Y), true
 }

@@ -42,26 +42,29 @@ type CreateChatResult struct {
 }
 
 func (c *QwenClient) RegisterFile(ctx context.Context, bearerToken string, info FileInfo, sts StsTokenResponse) error {
-	payload := map[string]any{
-		"file_id":    sts.FileID,
-		"file_name":  info.Filename,
-		"file_size":  info.Filesize,
-		"file_type":  info.Filetype,
-		"oss_key":    sts.FilePath,
-		"oss_bucket": sts.Bucket,
-		"category":   info.Category,
-	}
-	raw, err := json.Marshal(map[string]any{"file": payload})
-	if err != nil {
-		return err
+	var body bytes.Buffer
+	writer := multipart.NewWriter(&body)
+
+	_ = writer.WriteField("file_id", sts.FileID)
+	_ = writer.WriteField("file_name", info.Filename)
+	_ = writer.WriteField("file_size", fmt.Sprintf("%d", info.Filesize))
+	_ = writer.WriteField("file_type", info.Filetype)
+	_ = writer.WriteField("oss_bucket", sts.Bucket)
+	_ = writer.WriteField("category", info.Category)
+
+	part, err := writer.CreateFormFile("file", info.Filename)
+	if err == nil {
+		_, _ = part.Write([]byte{})
 	}
 
+	_ = writer.Close()
+
 	u := c.baseURL + "/api/v1/files"
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, u, bytes.NewReader(raw))
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, u, &body)
 	if err != nil {
 		return err
 	}
-	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Content-Type", writer.FormDataContentType())
 	req.Header.Set("Authorization", "Bearer "+bearerToken)
 	req.Header.Set("X-Requested-With", "XMLHttpRequest")
 
@@ -72,10 +75,9 @@ func (c *QwenClient) RegisterFile(ctx context.Context, bearerToken string, info 
 	defer resp.Body.Close()
 
 	if resp.StatusCode < 200 || resp.StatusCode > 299 {
-		body, _ := io.ReadAll(io.LimitReader(resp.Body, 2<<20))
-		return httpStatusError(resp.StatusCode, body)
+		resBody, _ := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
+		return httpStatusError(resp.StatusCode, resBody)
 	}
-
 	return nil
 }
 
@@ -89,10 +91,8 @@ func (c *QwenClient) UploadFile(ctx context.Context, bearerToken string, localPa
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 
-	// Add category field
 	_ = writer.WriteField("category", "chat")
 
-	// Add the file
 	part, err := writer.CreateFormFile("file", filepath.Base(localPath))
 	if err != nil {
 		return MapFileInfo{}, err

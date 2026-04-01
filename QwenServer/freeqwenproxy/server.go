@@ -89,13 +89,18 @@ func (s *Server) ListenAndServe(ctx context.Context) (net.Listener, *http.Server
 
 	go func() {
 		<-ctx.Done()
+		log.Printf("[QwenServer] Shutting down...")
 		shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
-		_ = srv.Shutdown(shutdownCtx)
+		if err := srv.Shutdown(shutdownCtx); err != nil {
+			log.Printf("[QwenServer] Shutdown error: %v", err)
+		}
 	}()
 
 	go func() {
-		_ = srv.Serve(ln)
+		if err := srv.Serve(ln); err != nil && !errors.Is(err, http.ErrServerClosed) {
+			log.Printf("[QwenServer] Serve error: %v", err)
+		}
 	}()
 
 	return ln, srv, nil
@@ -619,7 +624,7 @@ func (s *Server) handleUploadFile(w http.ResponseWriter, r *http.Request) {
 		Category: "chat",
 	}
 
-	sts, token, err := s.qwen.GetStsToken(r.Context(), fileInfo)
+	sts, _, err := s.qwen.GetStsToken(r.Context(), fileInfo)
 	if err != nil {
 		writeJSON(w, http.StatusInternalServerError, map[string]any{"error": fmt.Sprintf("Ошибка при получении токена: %v", err)})
 		return
@@ -629,14 +634,6 @@ func (s *Server) handleUploadFile(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, http.StatusInternalServerError, map[string]any{"error": fmt.Sprintf("Ошибка при загрузке файла: %v", err)})
 		return
 	}
-
-	if token != nil {
-		if err := s.qwen.RegisterFile(r.Context(), token.Token, fileInfo, sts); err != nil {
-			log.Printf("WARNING: QwenServer failed to register file: %v", err)
-		}
-	}
-
-	// Move mimeType calculation up
 
 	writeJSON(w, http.StatusOK, map[string]any{
 		"success": true,

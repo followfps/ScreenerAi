@@ -1,0 +1,23 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+rsrc.syso
+
+# Build directories
+build/
+dist/
+
+# Logs
+*.log
+
+# Project specific
+session/tokens.json
+config.yaml
+build.zip
+
+# OS files
+.DS_Store
+Thumbs.db

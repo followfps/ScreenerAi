@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"context"
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"image"
@@ -9,48 +11,153 @@ import (
 	"io"
 	"log"
 	"mime/multipart"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
 	"path/filepath"
+	"strconv"
 	"strings"
+	"sync"
 	"syscall"
 	"time"
 
+	"mintahahahahah/freeqwenproxy"
+
+	"github.com/getlantern/systray"
 	"github.com/kbinani/screenshot"
+	"golang.design/x/clipboard"
 	"golang.design/x/hotkey"
 	"golang.design/x/hotkey/mainthread"
 	"gopkg.in/yaml.v3"
 )
 
-// Config represents the application configuration loaded from config.yaml.
+//go:embed landscape.ico
+var iconBytes []byte
+
 type Config struct {
-	Hotkey         string `yaml:"hotkey"`
-	RootDirectory  string `yaml:"root_directory"`
-	QwenServerURL  string `yaml:"qwen_server_url"`
-	QwenAPIKey     string `yaml:"qwen_api_key"`
-	AIModel        string `yaml:"ai_model"`
-	PromptTemplate string `yaml:"prompt_template"`
+	Hotkey          string `yaml:"hotkey" json:"hotkey"`
+	ClipboardHotkey string `yaml:"clipboard_hotkey" json:"clipboard_hotkey"`
+	RootDirectory   string `yaml:"root_directory" json:"root_directory"`
+	QwenServerURL   string `yaml:"qwen_server_url" json:"qwen_server_url"`
+	AIModel         string `yaml:"ai_model" json:"ai_model"`
+	PromptTemplate  string `yaml:"prompt_template" json:"prompt_template"`
+	Theme           string `yaml:"theme" json:"theme"`
+	QwenToken       string `yaml:"qwen_token" json:"qwen_token"`
+	OverlayOpacity  int    `yaml:"overlay_opacity" json:"overlay_opacity"`
+	SelectionColor  string `yaml:"selection_color" json:"selection_color"`
+	CopyToClipboard bool   `yaml:"copy_to_clipboard" json:"copy_to_clipboard"`
+	RunAtStartup    bool   `yaml:"run_at_startup" json:"run_at_startup"`
 }
+
+var (
+	ctxSrv    context.Context
+	cancelSrv context.CancelFunc
+)
 
 func main() {
 	mainthread.Init(fn)
 }
 
+func startQwenServer(ctx context.Context) {
+	cfg := freeqwenproxy.DefaultConfig()
+
+	host := strings.TrimSpace(os.Getenv("HOST"))
+	if host == "" {
+		host = "127.0.0.1"
+	}
+
+	port := 3264
+	if v := strings.TrimSpace(os.Getenv("PORT")); v != "" {
+		if p, err := strconv.Atoi(v); err == nil && p > 0 && p <= 65535 {
+			port = p
+		}
+	}
+	cfg.Addr = net.JoinHostPort(host, strconv.Itoa(port))
+
+	cfg.UpstreamBaseURL = strings.TrimSpace(os.Getenv("FREEQWEN_UPSTREAM_BASE_URL"))
+	cfg.UpstreamAPIKey = strings.TrimSpace(os.Getenv("DASHSCOPE_API_KEY"))
+	if cfg.UpstreamAPIKey == "" {
+		cfg.UpstreamAPIKey = strings.TrimSpace(os.Getenv("FREEQWEN_API_KEY"))
+	}
+
+	srv := freeqwenproxy.NewServer(cfg)
+
+	log.Printf("[QwenServer] Starting server on %s", cfg.Addr)
+	_, _, err := srv.ListenAndServe(ctx)
+	if err != nil {
+		log.Printf("[QwenServer] Error: %v", err)
+	}
+}
+
+func onReady() {
+	if len(iconBytes) > 0 {
+		systray.SetIcon(iconBytes)
+	}
+
+	systray.SetTitle("ScreenOrganizer")
+	systray.SetTooltip("ScreenOrganizer is running")
+
+	mSettings := systray.AddMenuItem("Settings", "Open configuration settings")
+	mQuit := systray.AddMenuItem("Exit", "Exit the application")
+	go func() {
+		for {
+			select {
+			case <-mSettings.ClickedCh:
+				log.Println("Settings clicked")
+				go showSettingsWindow()
+			case <-mQuit.ClickedCh:
+				log.Println("Exiting via tray...")
+				if cancelSrv != nil {
+					cancelSrv()
+				}
+				systray.Quit()
+				os.Exit(0)
+			}
+		}
+	}()
+}
+
+func onExit() {
+	if cancelSrv != nil {
+		cancelSrv()
+	}
+}
+
 func fn() {
+	execPath, err := os.Executable()
+	if err == nil {
+		_ = os.Chdir(filepath.Dir(execPath))
+	}
+
 	log.SetFlags(log.LstdFlags | log.Lmsgprefix)
 	log.SetPrefix("[ScreenOrganizer] ")
 
-	// Initialize logging to both stdout and a file for debugging
 	logFile, err := os.OpenFile("screener.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err == nil {
-		multiWriter := io.MultiWriter(os.Stdout, logFile)
+		var writers []io.Writer
+		writers = append(writers, logFile)
+		if os.Stdout != nil {
+			writers = append(writers, os.Stdout)
+		}
+		multiWriter := io.MultiWriter(writers...)
 		log.SetOutput(multiWriter)
-	} else {
-		log.Printf("Failed to open log file, using stdout only: %v", err)
 	}
 
-	// Load configuration
+	log.Println("Application starting...")
+
+	ctxSrv, cancelSrv = context.WithCancel(context.Background())
+
+	go startQwenServer(ctxSrv)
+
+	go func() {
+		systray.Run(onReady, onExit)
+	}()
+
+	if err := clipboard.Init(); err != nil {
+		log.Printf("Warning: Failed to initialize clipboard: %v", err)
+	}
+
 	cfg, err := loadConfig("config.yaml")
 	if err != nil {
 		log.Fatalf("Failed to load config: %v", err)
@@ -61,49 +168,189 @@ func fn() {
 	log.Printf("QwenServer URL: %s", cfg.QwenServerURL)
 	log.Printf("AI model: %s", cfg.AIModel)
 	log.Printf("Hotkey: %s", cfg.Hotkey)
+	log.Printf("Clipboard Hotkey: %s", cfg.ClipboardHotkey)
 
-	// Validate root directory exists
 	if _, err := os.Stat(cfg.RootDirectory); os.IsNotExist(err) {
 		log.Fatalf("Root directory does not exist: %s", cfg.RootDirectory)
 	}
 
-	// Parse hotkey combination
-	mods, key, err := parseHotkey(cfg.Hotkey)
-	if err != nil {
-		log.Fatalf("Failed to parse hotkey '%s': %v", cfg.Hotkey, err)
+	var hk, hkClipboard *hotkey.Hotkey
+
+	registerHotkeys := func(c *Config) {
+		if hk != nil {
+			hk.Unregister()
+			hk = nil
+		}
+		if hkClipboard != nil {
+			hkClipboard.Unregister()
+			hkClipboard = nil
+		}
+
+		if c.Hotkey != "" {
+			mods, key, err := parseHotkey(c.Hotkey)
+			if err != nil {
+				log.Printf("Failed to parse hotkey '%s': %v", c.Hotkey, err)
+			} else {
+				hk = hotkey.New(mods, key)
+				if err := hk.Register(); err != nil {
+					log.Printf("Failed to register hotkey '%s': %v", c.Hotkey, err)
+					hk = nil
+				} else {
+					log.Printf("Global hotkey '%s' registered.", c.Hotkey)
+				}
+			}
+		}
+
+		if c.ClipboardHotkey != "" {
+			mods, key, err := parseHotkey(c.ClipboardHotkey)
+			if err != nil {
+				log.Printf("Failed to parse clipboard hotkey '%s': %v", c.ClipboardHotkey, err)
+			} else {
+				hkClipboard = hotkey.New(mods, key)
+				if err := hkClipboard.Register(); err != nil {
+					log.Printf("Failed to register clipboard hotkey '%s': %v", c.ClipboardHotkey, err)
+					hkClipboard = nil
+				} else {
+					log.Printf("Clipboard hotkey '%s' registered.", c.ClipboardHotkey)
+				}
+			}
+		}
 	}
 
-	// Register global hotkey
-	hk := hotkey.New(mods, key)
-	if err := hk.Register(); err != nil {
-		log.Fatalf("Failed to register hotkey '%s': %v", cfg.Hotkey, err)
-	}
-	defer hk.Unregister()
+	registerHotkeys(cfg)
+	defer func() {
+		if hk != nil {
+			hk.Unregister()
+		}
+		if hkClipboard != nil {
+			hkClipboard.Unregister()
+		}
+	}()
 
-	log.Printf("Global hotkey '%s' registered. Press it to capture and organize a screenshot.", cfg.Hotkey)
-	log.Printf("Press Ctrl+C to exit.")
-
-	// Set up graceful shutdown
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
 
-	// Main event loop
 	for {
+		var ch1, ch2 <-chan hotkey.Event
+		dummy1 := make(chan hotkey.Event)
+		dummy2 := make(chan hotkey.Event)
+
+		if hk != nil {
+			ch1 = hk.Keydown()
+		} else {
+			ch1 = dummy1
+		}
+
+		if hkClipboard != nil {
+			ch2 = hkClipboard.Keydown()
+		} else {
+			ch2 = dummy2
+		}
+
 		select {
-		case <-hk.Keydown():
+		case <-ch1:
 			log.Println("Hotkey pressed! Capturing screenshot...")
 			go handleScreenshot(cfg)
+		case <-ch2:
+			log.Println("Clipboard Hotkey pressed! Toggling clipboard monitor...")
+			toggleClipboardMonitor(cfg)
 		case sig := <-sigChan:
 			log.Printf("Received signal %v. Shutting down...", sig)
 			return
+		case <-reloadChan:
+			log.Println("Reloading configuration...")
+			newCfg, err := loadConfig("config.yaml")
+			if err != nil {
+				log.Printf("Failed to load new config: %v", err)
+				continue
+			}
+
+			if newCfg.Hotkey != cfg.Hotkey || newCfg.ClipboardHotkey != cfg.ClipboardHotkey {
+				log.Println("Hotkeys changed. Re-registering...")
+				registerHotkeys(newCfg)
+			}
+			cfg = newCfg
+			log.Printf("Configuration reloaded")
 		}
 	}
 }
 
-// handleScreenshot shows the selection overlay, captures the selected region,
-// sends it to the QwenServer AI, and saves it to the chosen folder.
+var (
+	reloadChan      = make(chan struct{}, 1)
+	clipboardCtx    context.Context
+	clipboardCancel context.CancelFunc
+	ignoreHash      string
+	ignoreHashMu    sync.Mutex
+)
+
+func toggleClipboardMonitor(cfg *Config) {
+	if clipboardCancel != nil {
+		clipboardCancel()
+		clipboardCancel = nil
+		log.Println("Clipboard monitor OFF")
+		go showNotification("Clipboard monitor OFF")
+		return
+	}
+
+	clipboardCtx, clipboardCancel = context.WithCancel(context.Background())
+	ch := clipboard.Watch(clipboardCtx, clipboard.FmtImage)
+	log.Println("Clipboard monitor ON")
+	go showNotification("Clipboard monitor ON")
+
+	go func(ctx context.Context, config *Config) {
+		initialData := clipboard.Read(clipboard.FmtImage)
+		initialHash := string(initialData)
+
+		for {
+			select {
+			case <-ctx.Done():
+				return
+			case data, ok := <-ch:
+				if !ok {
+					return
+				}
+
+				ignoreHashMu.Lock()
+				if ignoreHash != "" && string(data) == ignoreHash {
+					ignoreHash = ""
+					ignoreHashMu.Unlock()
+					continue
+				}
+				ignoreHashMu.Unlock()
+
+				if string(data) == initialHash {
+					initialHash = ""
+					continue
+				}
+				initialHash = ""
+
+				log.Printf("Image detected in clipboard! Processing %d bytes...", len(data))
+				go processImageData(config, data)
+			}
+		}
+	}(clipboardCtx, cfg)
+}
+
+func reloadConfigTrigger() {
+	select {
+	case reloadChan <- struct{}{}:
+	default:
+	}
+}
+
+func saveConfig(cfg *Config) error {
+	data, err := yaml.Marshal(cfg)
+	if err != nil {
+		return fmt.Errorf("marshaling YAML: %w", err)
+	}
+
+	if err := os.WriteFile("config.yaml", data, 0644); err != nil {
+		return fmt.Errorf("writing config file: %w", err)
+	}
+	return nil
+}
+
 func handleScreenshot(cfg *Config) {
-	// Step 1: Capture full screen first (across ALL monitors before overlay appears)
 	var vRect image.Rectangle
 	numDisplays := screenshot.NumActiveDisplays()
 	if numDisplays > 0 {
@@ -123,8 +370,7 @@ func handleScreenshot(cfg *Config) {
 	}
 	log.Printf("Full screen captured (%v)", vRect)
 
-	// Step 2: Show selection overlay — user drags to select region across virtual screen
-	selectedRect, ok := selectRegion(vRect)
+	selectedRect, ok := selectRegion(vRect, cfg.OverlayOpacity, cfg.SelectionColor)
 	if !ok {
 		log.Println("Selection cancelled.")
 		return
@@ -133,10 +379,8 @@ func handleScreenshot(cfg *Config) {
 		selectedRect.Min.X, selectedRect.Min.Y,
 		selectedRect.Max.X, selectedRect.Max.Y)
 
-	// Step 3: Crop the selected area from the full capture
 	cropped := fullImg.SubImage(selectedRect)
 
-	// Step 4: Encode cropped region to PNG in memory
 	var buf bytes.Buffer
 	if err := png.Encode(&buf, cropped); err != nil {
 		log.Printf("ERROR: Failed to encode screenshot as PNG: %v", err)
@@ -146,7 +390,17 @@ func handleScreenshot(cfg *Config) {
 	log.Printf("Cropped screenshot: %dx%d, %d bytes",
 		selectedRect.Dx(), selectedRect.Dy(), len(pngData))
 
-	// Step 5: Get list of subdirectories in root_directory
+	if cfg.CopyToClipboard {
+		ignoreHashMu.Lock()
+		ignoreHash = string(pngData)
+		ignoreHashMu.Unlock()
+		clipboard.Write(clipboard.FmtImage, pngData)
+	}
+
+	processImageData(cfg, pngData)
+}
+
+func processImageData(cfg *Config, pngData []byte) {
 	folders, err := getSubdirectories(cfg.RootDirectory)
 	if err != nil {
 		log.Printf("ERROR: Failed to read subdirectories: %v", err)
@@ -158,7 +412,6 @@ func handleScreenshot(cfg *Config) {
 		log.Printf("Found %d folders: %v", len(folders), folders)
 	}
 
-	// Step 6: Upload the screenshot to QwenServer
 	imageURL, fileID, err := uploadFileToQwen(cfg, pngData, "screenshot.png")
 	if err != nil {
 		log.Printf("ERROR: Failed to upload screenshot to QwenServer: %v", err)
@@ -166,17 +419,13 @@ func handleScreenshot(cfg *Config) {
 	}
 	log.Printf("Screenshot uploaded, URL: %s", imageURL)
 
-	// Step 7: Ask the AI which folder to use
 	chosenFolder, err := askQwenAI(cfg, imageURL, fileID, folders)
 	if err != nil {
-		log.Printf("ERROR: AI request failed: %v", err)
+		log.Printf("ERROR: AI classification failed: %v", err)
 		return
 	}
-	chosenFolder = strings.TrimSpace(chosenFolder)
 
-	// Step 8: Validate the AI's choice (robust parsing)
 	matched := false
-	// Fast exact match first
 	for _, f := range folders {
 		if strings.EqualFold(chosenFolder, f) {
 			chosenFolder = f
@@ -185,7 +434,6 @@ func handleScreenshot(cfg *Config) {
 		}
 	}
 
-	// Fallback to substring matching (AI often includes chatter like "Folder: Work")
 	if !matched {
 		lowerResp := strings.ToLower(chosenFolder)
 		for _, f := range folders {
@@ -205,7 +453,6 @@ func handleScreenshot(cfg *Config) {
 		log.Printf("AI chose folder: '%s'", chosenFolder)
 	}
 
-	// Step 9: Save the screenshot with a timestamped filename
 	timestamp := time.Now().Format("2006-01-02_15-04-05")
 	filename := fmt.Sprintf("%s.png", timestamp)
 	destDir := filepath.Join(cfg.RootDirectory, chosenFolder)
@@ -222,10 +469,10 @@ func handleScreenshot(cfg *Config) {
 	}
 
 	log.Printf("Screenshot saved to: %s", destPath)
+
+	go showNotification(fmt.Sprintf("Successfully saved to %s", chosenFolder))
 }
 
-// uploadFileToQwen uploads an image to the QwenServer file upload endpoint
-// and returns the file URL and ID for use in multimodal messages.
 func uploadFileToQwen(cfg *Config, fileData []byte, filename string) (string, string, error) {
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
@@ -247,9 +494,6 @@ func uploadFileToQwen(cfg *Config, fileData []byte, filename string) (string, st
 		return "", "", fmt.Errorf("creating upload request: %w", err)
 	}
 	req.Header.Set("Content-Type", writer.FormDataContentType())
-	if cfg.QwenAPIKey != "" {
-		req.Header.Set("Authorization", "Bearer "+cfg.QwenAPIKey)
-	}
 
 	client := &http.Client{Timeout: 60 * time.Second}
 	resp, err := client.Do(req)
@@ -294,13 +538,10 @@ func uploadFileToQwen(cfg *Config, fileData []byte, filename string) (string, st
 	return result.File.URL, result.File.ID, nil
 }
 
-// askQwenAI sends the screenshot URL and folder list to the QwenServer vision model
-// and returns the chosen folder name.
 func askQwenAI(cfg *Config, imageURL string, fileID string, folders []string) (string, error) {
 	folderList := strings.Join(folders, ", ")
 	prompt := strings.ReplaceAll(cfg.PromptTemplate, "{folders}", folderList)
 
-	// Build multimodal content: text prompt + image URL (Qwen VL format)
 	content := []map[string]any{
 		{
 			"type": "text",
@@ -334,11 +575,8 @@ func askQwenAI(cfg *Config, imageURL string, fileID string, folders []string) (s
 		return "", fmt.Errorf("creating request: %w", err)
 	}
 	req.Header.Set("Content-Type", "application/json")
-	if cfg.QwenAPIKey != "" {
-		req.Header.Set("Authorization", "Bearer "+cfg.QwenAPIKey)
-	}
 
-	client := &http.Client{Timeout: 90 * time.Second}
+	client := &http.Client{Timeout: 60 * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", fmt.Errorf("QwenServer request failed: %w", err)
@@ -350,13 +588,11 @@ func askQwenAI(cfg *Config, imageURL string, fileID string, folders []string) (s
 		return "", fmt.Errorf("reading response: %w", err)
 	}
 
-	// VERBOSE LOGGING START
 	log.Printf("--- AI REQUEST DEBUG ---")
 	log.Printf("Available folders: %v", folders)
 	log.Printf("Prompt sent: %s", prompt)
 	log.Printf("RAW QwenServer JSON Response: %s", string(respBody))
 	log.Printf("------------------------")
-	// VERBOSE LOGGING END
 
 	if resp.StatusCode < 200 || resp.StatusCode > 299 {
 		preview := string(respBody)
@@ -391,7 +627,6 @@ func askQwenAI(cfg *Config, imageURL string, fileID string, folders []string) (s
 	return answer, nil
 }
 
-// normalizeBaseURL ensures the URL ends with /api.
 func normalizeBaseURL(raw string) string {
 	u := strings.TrimSpace(raw)
 	if u == "" {
@@ -404,7 +639,6 @@ func normalizeBaseURL(raw string) string {
 	return u + "/api"
 }
 
-// getSubdirectories returns a list of immediate subdirectory names inside the given path.
 func getSubdirectories(root string) ([]string, error) {
 	entries, err := os.ReadDir(root)
 	if err != nil {
@@ -420,7 +654,6 @@ func getSubdirectories(root string) ([]string, error) {
 	return dirs, nil
 }
 
-// contains checks if a string exists in a slice (case-insensitive).
 func contains(slice []string, item string) bool {
 	for _, s := range slice {
 		if strings.EqualFold(s, item) {
@@ -430,7 +663,6 @@ func contains(slice []string, item string) bool {
 	return false
 }
 
-// loadConfig reads and parses the YAML configuration file.
 func loadConfig(path string) (*Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
@@ -442,7 +674,6 @@ func loadConfig(path string) (*Config, error) {
 		return nil, fmt.Errorf("parsing YAML config: %w", err)
 	}
 
-	// Validate required fields
 	if cfg.RootDirectory == "" {
 		return nil, fmt.Errorf("root_directory is not configured in %s", path)
 	}
@@ -453,16 +684,18 @@ func loadConfig(path string) (*Config, error) {
 		cfg.QwenServerURL = "http://localhost:3264"
 	}
 	if cfg.AIModel == "" {
-		cfg.AIModel = "qwen-vl-max"
+		cfg.AIModel = "qwen3.5-plus"
 	}
 	if cfg.PromptTemplate == "" {
 		cfg.PromptTemplate = "Based on this screenshot, which of these folders is the most relevant: {folders}? Return ONLY the folder name."
+	}
+	if cfg.Theme == "" {
+		cfg.Theme = "dark"
 	}
 
 	return &cfg, nil
 }
 
-// parseHotkey converts a string like "ctrl+shift+s" into hotkey modifiers and a key.
 func parseHotkey(hotkeyStr string) ([]hotkey.Modifier, hotkey.Key, error) {
 	parts := strings.Split(strings.ToLower(hotkeyStr), "+")
 	if len(parts) < 2 {
@@ -495,19 +728,15 @@ func parseHotkey(hotkeyStr string) ([]hotkey.Modifier, hotkey.Key, error) {
 	return mods, key, nil
 }
 
-// parseKey converts a key string to a hotkey.Key value.
 func parseKey(keyStr string) (hotkey.Key, error) {
-	// Letters A-Z
 	if len(keyStr) == 1 && keyStr[0] >= 'a' && keyStr[0] <= 'z' {
 		return hotkey.Key(0x41 + (keyStr[0] - 'a')), nil
 	}
 
-	// Digits 0-9
 	if len(keyStr) == 1 && keyStr[0] >= '0' && keyStr[0] <= '9' {
 		return hotkey.Key(0x30 + (keyStr[0] - '0')), nil
 	}
 
-	// Function keys
 	fKeys := map[string]hotkey.Key{
 		"f1": hotkey.KeyF1, "f2": hotkey.KeyF2, "f3": hotkey.KeyF3,
 		"f4": hotkey.KeyF4, "f5": hotkey.KeyF5, "f6": hotkey.KeyF6,
@@ -518,7 +747,6 @@ func parseKey(keyStr string) (hotkey.Key, error) {
 		return k, nil
 	}
 
-	// Special keys
 	special := map[string]hotkey.Key{
 		"space":  hotkey.KeySpace,
 		"return": hotkey.KeyReturn,

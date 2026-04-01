@@ -2,7 +2,6 @@ package freeqwenproxy
 
 import (
 	"encoding/json"
-	"errors"
 	"os"
 	"path/filepath"
 	"strings"
@@ -41,17 +40,21 @@ func (m *TokenManager) loadTokensUnlocked() ([]TokenEntry, error) {
 	}
 	b, err := os.ReadFile(m.path)
 	if err != nil {
-		if errors.Is(err, os.ErrNotExist) {
-			return nil, nil
-		}
 		return nil, err
 	}
-	if len(b) == 0 {
-		return nil, nil
-	}
+
+	content := string(b)
+	content = strings.TrimPrefix(content, "\uFEFF")
+	b = []byte(content)
+
 	var tokens []TokenEntry
 	if err := json.Unmarshal(b, &tokens); err != nil {
-		return nil, err
+		var obj map[string]any
+		if err2 := json.Unmarshal(b, &obj); err2 == nil && len(obj) == 0 {
+			tokens = []TokenEntry{}
+		} else {
+			return nil, err
+		}
 	}
 	return tokens, nil
 }
