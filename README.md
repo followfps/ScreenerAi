@@ -38,8 +38,8 @@ You will need Go 1.21 or higher installed.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ScreanerAi.git
-   cd ScreanerAi
+   git clone https://github.com/followfps/ScreenerAi.git
+   cd ScreenerAi
    ```
 2. Run the build script in PowerShell:
    ```powershell
@@ -52,7 +52,7 @@ To enable the AI, you need to add an authorization token:
 1. Go to [chat.qwen.ai](https://chat.qwen.ai/) and log in.
 2. Open developer tools (`F12`), go to the **Application** tab -> **Local Storage**.
 3. Find the `token` key and copy its value.
-4. In ScreanerAi, open **Settings** (right-click the tray icon) and paste the token into the **Qwen Session Token** field.
+4. In ScreenerAi, open **Settings** (right-click the tray icon) and paste the token into the **Qwen Session Token** field.
 
 ---
 
