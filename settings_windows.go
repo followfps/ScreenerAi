@@ -7,13 +7,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"mintahahahahah/freeqwenproxy"
 	"os"
 	"path/filepath"
 	"runtime"
 	"sync"
 	"syscall"
 	"unsafe"
+
+	"github.com/followfps/ScreanerAi/QwenServer/freeqwenproxy"
 
 	"github.com/jchv/go-webview2"
 	"golang.org/x/sys/windows/registry"

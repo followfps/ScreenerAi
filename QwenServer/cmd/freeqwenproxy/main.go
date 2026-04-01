@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"mintahahahahah/freeqwenproxy"
+	"github.com/followfps/ScreanerAi/QwenServer/freeqwenproxy"
 	"net"
 	"os"
 	"os/signal"

@@ -22,7 +22,7 @@ import (
 	"syscall"
 	"time"
 
-	"mintahahahahah/freeqwenproxy"
+	"github.com/followfps/ScreanerAi/QwenServer/freeqwenproxy"
 
 	"github.com/getlantern/systray"
 	"github.com/kbinani/screenshot"

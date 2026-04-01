@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"mintahahahahah/freeqwenproxy"
+	"github.com/followfps/ScreanerAi/QwenServer/freeqwenproxy"
 	"os"
 	"os/exec"
 	"path/filepath"
