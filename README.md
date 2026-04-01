@@ -4,7 +4,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)
 ![Go](https://img.shields.io/badge/go-1.21%2B-blue.svg)
 
-**ScreanerAi** is a modern Windows application that transforms screenshot chaos into a structured library. Using the power of the **Qwen-VL** multimodal neural network, the app automatically analyzes the content of your screen captures and saves them into the most relevant thematic folders.
+**ScreenerAi** is a modern Windows application that transforms screenshot chaos into a structured library. Using the power of the **Qwen-VL** multimodal neural network, the app automatically analyzes the content of your screen captures and saves them into the most relevant thematic folders.
 
 ---
 
